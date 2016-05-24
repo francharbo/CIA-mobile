@@ -1,27 +1,38 @@
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.commons.layout"
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns:com="sap.ui.commons" xmlns="sap.m" controllerName="fr.ar.cia.controller.Login">
 	<App>
 		<pages>
 			<Page title="{i18n>title}" showHeader="false" enableScrolling="false">
 				<content>
-					<l:BorderLayout id="borderlayout" height="80%" class ="myBackgroundStyle">
-						<l:bottom>
-							<l:BorderLayoutArea contentAlign="center" size="50%" >
-								<l:content>
-									<VBox>
-										<Label text="Collaborateur"/>
-										<com:ComboBox id="collabInput" value="ZAC"/>
-									</VBox>
-									<VBox>
-										<Label text="Mot de passe"/>
-										<Input id="pwd" textAlign="Begin"/>
-									</VBox>
-									<Button text="Log In" activeIcon="sap-icon://log" icon="sap-icon://log" type="Accept"/>
-								</l:content>
-							</l:BorderLayoutArea>
-						</l:bottom>
-					</l:BorderLayout>
+					<VBox height="80%" class="myBackgroundStyle" alignItems="Center" justifyContent="Center">
+						<Label text="Collaborateur"/>
+						<ComboBox id="collabInput" value="ZAC"/>
+						<Label text="Mot de passe"/>
+						<Input id="pwd" textAlign="Begin"/>
 						<Button text="Log In" activeIcon="sap-icon://log" icon="sap-icon://log" type="Accept"/>
+					</VBox>
+					<HBox height="20%" alignItems="Center">
+						<Image src="resource/smart-phone_email.jpg" class="sapUiSmallMarginBegin"/>
+						<Image src="resource/smart-phone_email.jpg" class="sapUiSmallMargin"/>
+						<Button icon="sap-icon://action-settings" class="sapUiSmallMarginEnd"/>
+					</HBox>
+					<!--<l:BorderLayout id="borderlayout" height="80%" class="myBackgroundStyle">-->
+					<!--	<l:bottom>-->
+					<!--		<l:BorderLayoutArea contentAlign="center" size="50%">-->
+					<!--<l:content>-->
+					<!--	<VBox>-->
+					<!--		<Label text="Collaborateur"/>-->
+					<!--		<com:ComboBox id="collabInput" value="ZAC"/>-->
+					<!--	</VBox>-->
+					<!--	<VBox>-->
+					<!--		<Label text="Mot de passe"/>-->
+					<!--		<Input id="pwd" textAlign="Begin"/>-->
+					<!--	</VBox>-->
+					<!--	<Button text="Log In" activeIcon="sap-icon://log" icon="sap-icon://log" type="Accept"/>-->
+					<!--</l:content>-->
+					<!--		</l:BorderLayoutArea>-->
+					<!--	</l:bottom>-->
+					<!--</l:BorderLayout>-->
 				</content>
 			</Page>
 		</pages>

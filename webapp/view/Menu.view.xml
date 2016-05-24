@@ -1,0 +1,28 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:com="sap.ui.commons" xmlns="sap.m" controllerName="fr.ar.cia.controller.Menu">
+	<VBox width="100%">
+		<HBox height="20%" alignItems="Center">
+			<Image src="resource/smart-phone_email.jpg" class="sapUiSmallMarginBegin"/>
+			<Image src="resource/smart-phone_email.jpg" class="sapUiSmallMarginEnd sapUiSmallMarginBegin"/>
+			<Button icon="sap-icon://action-settings" class="sapUiSmallMarginEnd"/>
+		</HBox>
+		<f:SimpleForm maxContainerCols="2" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" labelSpanS="3" emptySpanL="3" emptySpanM="3" emptySpanS="1" columnsL="1" columnsM="1" class="editableForm">
+			<f:content>
+				<Label text="Auteur"/>
+				<Input id="auteur"/>
+				<Label text="Site"/>
+				<Input id="site"/>
+				<Label text="Atelier"/>
+				<Input id="atelier"/>
+			</f:content>
+		</f:SimpleForm>
+		<Text text="Communication immédiate en 3 étapes"/>
+		<VBox>
+			<Text text="ETAPE 1"/>
+			<Button icon="sap-icon://activity-2" text="DECLARATION"/>
+			<Text text="ETAPE 2"/>
+			<Button icon="sap-icon://wounds-doc" text="DOMMAGE"/>
+			<Text text="ETAPE 3"/>
+			<Button icon="sap-icon://action" text="DIFFUSION DE LA CIA"/>
+		</VBox>
+	</VBox>
+</mvc:View>
