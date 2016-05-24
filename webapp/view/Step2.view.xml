@@ -1,0 +1,35 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:com="sap.ui.commons" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="fr.ar.cia.controller.Step1">
+	<App backgroundColor="white">
+		<VBox width="100%">
+			<items>
+				<HBox height="10%" alignItems="Center" justifyContent="SpaceBetween">
+					<items>
+						<Image src="resource/smart-phone_email.jpg" class="sapUiSmallMarginBegin"/>
+						<Image src="resource/smart-phone_email.jpg" class="sapUiSmallMarginEnd sapUiSmallMarginBegin"/>
+						<Button icon="sap-icon://action-settings" class="sapUiSmallMarginEnd"/>
+					</items>
+				</HBox>
+				<HBox height="10%" alignItems="End" justifyContent="SpaceBetween" class="sapUiTinyMargin">
+					<items>
+						<Button id="__button3" icon="sap-icon://nav-back">
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+						</Button>
+						<Button text="DOMMAGE - 2/3" width="100%" id="__button2" icon="sap-icon://wounds-doc" class="sapUiTinyMarginBegin sapUiTinyMarginEnd" type="Accept">
+							<layoutData>
+								<FlexItemData growFactor="100"/>
+							</layoutData>
+						</Button>
+						<Button icon="sap-icon://forward" class="sapUiSmallMarginBegin">
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+						</Button>
+					</items>
+				</HBox>
+			
+			</items>
+		</VBox>
+	</App>
+</mvc:View>

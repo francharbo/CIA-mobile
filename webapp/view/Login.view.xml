@@ -1,6 +1,6 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns:com="sap.ui.commons" xmlns="sap.m" controllerName="fr.ar.cia.controller.Login">
-	<App>
+	<App backgroundColor="white">
 		<pages>
 			<Page title="{i18n>title}" showHeader="false" enableScrolling="false">
 				<content>

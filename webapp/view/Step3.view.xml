@@ -1,0 +1,88 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:com="sap.ui.commons" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="fr.ar.cia.controller.Step3">
+	<App backgroundColor="white">
+		<VBox width="100%">
+			<items>
+				<HBox height="10%" alignItems="Center" justifyContent="SpaceBetween">
+					<items>
+						<Image src="resource/smart-phone_email.jpg" class="sapUiSmallMarginBegin"/>
+						<Image src="resource/smart-phone_email.jpg" class="sapUiSmallMarginEnd sapUiSmallMarginBegin"/>
+						<Button icon="sap-icon://action-settings" class="sapUiSmallMarginEnd"/>
+					</items>
+				</HBox>
+				<HBox height="10%" alignItems="End" justifyContent="SpaceBetween">
+					<items>
+						<Button id="__button3" icon="sap-icon://nav-back">
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+						</Button>
+						<Button text="DIFFUSION DE LA CIA - 3/3" width="100%" id="__button2" icon="sap-icon://forward" type="Accept">
+							<layoutData>
+								<FlexItemData growFactor="100"/>
+							</layoutData>
+						</Button>
+						<Button icon="sap-icon://document-text">
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+						</Button>
+					</items>
+				</HBox>
+				<f:SimpleForm>
+					<VBox>
+						<HBox width="100%" id="__hbox1" displayInline="true" fitContainer="false" justifyContent="End">
+							<items>
+								<Text text="SMS"/>
+							</items>
+						</HBox>
+						<HBox width="100%" id="__hbox2" justifyContent="SpaceBetween" height="40px">
+							<items>
+								<CheckBox id="__box1" text="Directeurs"/>
+								<Switch id="__switch0" state="false" customTextOn="Oui" customTextOff="Non"/>
+							</items>
+						</HBox>
+						<HBox width="100%" id="__hbox2_copy" justifyContent="SpaceBetween" height="40px">
+							<items>
+								<CheckBox id="__box1_copy" text="RH &amp; Sécurité"/>
+								<Switch id="__switch1" state="false" customTextOn="Oui" customTextOff="Non"/>
+							</items>
+						</HBox>
+						<HBox width="100%" id="__hbox2_copy2" justifyContent="SpaceBetween" height="40px">
+							<items>
+								<CheckBox id="__box1_copy2" text="Encadrement"/>
+								<Switch id="__switch2" state="false" customTextOn="Oui" customTextOff="Non"/>
+							</items>
+						</HBox>
+						<HBox width="100%" id="__hbox2_copy3" justifyContent="SpaceBetween" height="40px">
+							<items>
+								<CheckBox id="__box1_copy3" text="Responsables"/>
+								<Switch id="__switch3" state="false" customTextOn="Oui" customTextOff="Non"/>
+							</items>
+						</HBox>
+						<HBox width="100%" id="__hbox2_copy4" justifyContent="SpaceBetween" height="40px">
+							<items>
+								<CheckBox id="__box1_copy4" text="Opérationels"/>
+								<Switch id="__switch4" state="false" customTextOn="Oui" customTextOff="Non"/>
+							</items>
+						</HBox>
+						<HBox width="100%" id="__hbox2_copy5" height="40px">
+							<items>
+								<CheckBox id="__box1_copy5" text="Intranet"/>
+							</items>
+						</HBox>
+						<HBox width="100%" id="__hbox2_copy6" height="40px">
+							<items>
+								<CheckBox id="__box1_copy6" text="Réseau étendu"/>
+							</items>
+						</HBox>
+					</VBox>
+				</f:SimpleForm>
+				<HBox justifyContent="Center">
+					<Button text="Autre" type="Accept" icon="sap-icon://email" class="sapUiSmallMarginEnd" press="onOtherButton"/>
+					<Button text="Envoyer CIA" type="Reject" class="sapUiSmallMarginBegin"/>
+				</HBox>
+			</items>
+		</VBox>
+	</App>
+</mvc:View>
