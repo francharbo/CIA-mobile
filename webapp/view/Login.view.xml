@@ -1,20 +1,26 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns:com="sap.ui.commons" xmlns="sap.m" controllerName="fr.ar.cia.controller.Login">
-	<App backgroundColor="white">
+	<App backgroundImage="resource/full_background.jpg">
 		<pages>
 			<Page title="{i18n>title}" showHeader="false" enableScrolling="false">
 				<content>
-					<VBox height="80%" class="myBackgroundStyle" alignItems="Center" justifyContent="Center">
+					<VBox height="73%" alignItems="Center" justifyContent="Center">
 						<Label text="Collaborateur"/>
 						<ComboBox id="collabInput" value="ZAC"/>
 						<Label text="Mot de passe"/>
 						<Input id="pwd" textAlign="Begin"/>
-						<Button text="Log In" activeIcon="sap-icon://log" icon="sap-icon://log" type="Accept"/>
+						<Button text="Log In" activeIcon="sap-icon://log" icon="sap-icon://log" type="Accept" press="onLog"/>
 					</VBox>
-					<HBox height="20%" alignItems="Center">
-						<Image src="resource/smart-phone_email.jpg" class="sapUiSmallMarginBegin"/>
-						<Image src="resource/smart-phone_email.jpg" class="sapUiSmallMargin"/>
-						<Button icon="sap-icon://action-settings" class="sapUiSmallMarginEnd"/>
+					<HBox class="headerStyle" height="17%" alignItems="Center" justifyContent="SpaceBetween">
+						<items>
+							<Image src="resource/Image2.png" width="50%"/>
+							<Image src="resource/Image1.png" width="90%"/>
+						</items>
+					</HBox>
+					<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+						<items>
+							<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
+						</items>
 					</HBox>
 					<!--<l:BorderLayout id="borderlayout" height="80%" class="myBackgroundStyle">-->
 					<!--	<l:bottom>-->

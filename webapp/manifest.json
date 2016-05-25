@@ -41,8 +41,9 @@
 	"sap.ui5": {
 		"_version": "1.1.0",
 		"rootView": {
-			"viewName": "fr.ar.cia.view.Step3",
-			"type": "XML"
+			"viewName": "fr.ar.cia.view.App",
+			"type": "XML",
+			"id": "app"
 		},
 		"dependencies": {
 			"minUI5Version": "1.30.0",
@@ -68,6 +69,66 @@
 			"css": [{
 				"uri": "css/style.css"
 			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "fr.ar.cia.view",
+				"controlId": "app",
+				"controlAggregation": "pages"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "login",
+					"target": "login"
+				},
+				{
+					"pattern": "Menu",
+					"name": "menu",
+					"target": "menu"
+				},
+				{
+					"pattern": "etape1",
+					"name": "step1",
+					"target": "step1"
+				},
+				{
+					"pattern": "etape2",
+					"name": "step2",
+					"target": "step2"
+				},
+				{
+					"pattern": "etape3",
+					"name": "step3",
+					"target": "step3"
+				}
+			],
+			"targets": {
+				"login": {
+					"viewName": "Login",
+					"viewId": "login"
+				},
+				"menu": {
+					"viewName": "Menu",
+					"viewId": "menu"
+				},
+				"step1": {
+					"viewName": "Step1",
+					"viewId": "step1"
+				},
+				"step2": {
+					"viewName": "Step2",
+					"viewId": "step2"
+				},
+				"step3": {
+					"viewName": "Step3",
+					"viewId": "step3"
+				}
+				
+			}
+			
 		}
 	}
 }

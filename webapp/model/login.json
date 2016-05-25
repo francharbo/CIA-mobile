@@ -1,0 +1,6 @@
+{
+	"loginData": [
+		{"login": "foo", "password": "bar"},
+		{"login": "bla", "password": "bla"}
+	]
+}

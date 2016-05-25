@@ -1,5 +1,13 @@
 /* Enter your custom styles here */
  .myBackgroundStyle{  
-  background-image: url("/webapp/resource/btp.jpg");  
+  background: url("/webapp/resource/full_background.jpg");
+  width: 100%;
  }
  
+ .headerStyle {
+ 	background-color: #F7D358;
+ }
+ 
+ .footerStyle {
+ 	background-color: #8A2908;
+ }

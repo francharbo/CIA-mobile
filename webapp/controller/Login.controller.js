@@ -1,11 +1,30 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"fr/ar/cia/controller/BaseController",
+	"sap/ui/model/json/JSONModel"
+], function(BaseController, JSONModel) {
 	"use strict";
-
-	return Controller.extend("fr.ar.cia.controller.Login", {
+	var self;
+	return BaseController.extend("fr.ar.cia.controller.Login", {
 
 		onInit: function() {
+			self = this;
+			this.setModel(this.getOwnerComponent().getModel("login"));
+		},
+		
+		onLog: function() {
+			var login = this.byId("collabInput").getValue();
+			var password = this.byId("pwd").getValue();
+			var oModel = self.getModel("login").getProperty("/loginData");
+			
+			for (var i = 0; i < oModel.length; i++) {
+				if (oModel[i]["login"] === login && oModel[i]["password"] === password) {
+					this.getRouter().navTo("menu");
+					return;
+				}
+			}
+			
+			sap.ui.commons.MessageBox.alert("Hello World from MessageBox.alert()!");	
+			
 		}
 	});
 

@@ -33,5 +33,12 @@
     "notifyBeforePushLevel": "Error",
     "blockPush": false,
     "blockPushLevel": "Error"
+  },
+  "mockpreview": {
+    "mockUri": "",
+    "metadataFilePath": "model/metadata.xml",
+    "mockRequestsFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false
   }
 }

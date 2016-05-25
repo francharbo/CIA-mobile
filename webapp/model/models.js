@@ -10,6 +10,11 @@ sap.ui.define([
 			var oModel = new JSONModel(Device);
 			oModel.setDefaultBindingMode("OneWay");
 			return oModel;
+		},
+		
+		createLoginModel: function() {
+			var path = jQuery.sap.getModulePath("fr.ar.cia");
+			return new JSONModel([path, "model/login.json"].join("/"));
 		}
 
 	};
