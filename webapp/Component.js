@@ -8,7 +8,10 @@ sap.ui.define([
 	return UIComponent.extend("fr.ar.cia.Component", {
 
 		metadata: {
-			manifest: "json"
+			manifest: "json",
+			config : {  
+                 fullWidth : true
+				}
 		},
 
 		/**

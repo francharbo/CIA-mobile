@@ -1,4 +1,5 @@
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:com="sap.ui.commons" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="fr.ar.cia.controller.Step">
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:com="sap.ui.commons" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="fr.ar.cia.controller.Step">
 	<App backgroundColor="white">
 		<VBox width="100%">
 			<items>
@@ -15,7 +16,8 @@
 								<FlexItemData growFactor="1"/>
 							</layoutData>
 						</Button>
-						<Button text="DOMMAGE - 2/3" width="100%" id="__button2" icon="sap-icon://wounds-doc" class="sapUiTinyMarginBegin sapUiTinyMarginEnd" type="Accept">
+						<Button text="DOMMAGE - 2/3" width="100%" id="__button2" icon="sap-icon://wounds-doc" class="sapUiTinyMarginBegin sapUiTinyMarginEnd"
+							type="Accept">
 							<layoutData>
 								<FlexItemData growFactor="100"/>
 							</layoutData>
@@ -27,13 +29,34 @@
 						</Button>
 					</items>
 				</HBox>
-				<VBox height="63%"></VBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="Column" height="63%">
+					<com:Image src="resource/stickman.png" useMap="mapInjured">
+						<com:layoutData>
+							<FlexItemData id="injuredStickMan"/>
+						</com:layoutData>
+					</com:Image>
+					<com:ImageMap growFactor="1">
+						<com:areas>
+							<com:Area id="id" shape="rect" coords="40,20,100,80" href="http://www.perdu.com" alt="head" validationSuccess="" validationError=""
+								parseError="" formatError=""></com:Area>
+						</com:areas>
+						<!-- sap.ui.commons.Area -->
+					</com:ImageMap>
+					<VBox>
+						<com:DropdownBox id="gravite" placeholder="Gravité">
+						</com:DropdownBox>
+						<com:DropdownBox id="nature" placeholder="Nature du dommage"></com:DropdownBox>
+						<com:DropdownBox id="cause" placeholder="Cause"></com:DropdownBox>
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</VBox>
+				</FlexBox>
 				<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 					<items>
 						<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
 					</items>
 				</HBox>
-			
 			</items>
 		</VBox>
 	</App>

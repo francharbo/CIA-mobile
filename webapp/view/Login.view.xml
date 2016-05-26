@@ -1,14 +1,13 @@
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
-	xmlns:com="sap.ui.commons" xmlns="sap.m" controllerName="fr.ar.cia.controller.Login">
-	<App backgroundImage="resource/full_background.jpg">
-		<pages>
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:com="sap.ui.commons" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="fr.ar.cia.controller.Login">
 			<Page title="{i18n>title}" showHeader="false" enableScrolling="false">
 				<content>
 					<VBox height="73%" alignItems="Center" justifyContent="Center">
 						<Label text="Collaborateur"/>
-						<ComboBox id="collabInput" value="ZAC"/>
+						<com:ComboBox id="collabInput" items="{path: '/loginData',templateShareable: true}" value="">
+							<core:ListItem text="{login}"/>
+						</com:ComboBox>
 						<Label text="Mot de passe"/>
-						<Input id="pwd" textAlign="Begin"/>
+						<Input id="pwd" textAlign="Begin" type="Password"/>
 						<Button text="Log In" activeIcon="sap-icon://log" icon="sap-icon://log" type="Accept" press="onLog"/>
 					</VBox>
 					<HBox class="headerStyle" height="17%" alignItems="Center" justifyContent="SpaceBetween">
@@ -41,6 +40,4 @@
 					<!--</l:BorderLayout>-->
 				</content>
 			</Page>
-		</pages>
-	</App>
 </mvc:View>
