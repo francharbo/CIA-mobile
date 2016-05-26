@@ -36,42 +36,42 @@
 									<Text text="SMS"/>
 								</items>
 							</HBox>
-							<HBox width="100%" id="__hbox2" justifyContent="SpaceBetween" height="40px">
+							<HBox width="100%" id="__hbox2" justifyContent="SpaceBetween">
 								<items>
 									<CheckBox id="__box1" text="Directeurs"/>
 									<Switch id="__switch0" state="false" customTextOn="Oui" customTextOff="Non"/>
 								</items>
 							</HBox>
-							<HBox width="100%" id="__hbox2_copy" justifyContent="SpaceBetween" height="40px">
+							<HBox width="100%" id="__hbox2_copy" justifyContent="SpaceBetween">
 								<items>
 									<CheckBox id="__box1_copy" text="RH &amp; Sécurité"/>
 									<Switch id="__switch1" state="false" customTextOn="Oui" customTextOff="Non"/>
 								</items>
 							</HBox>
-							<HBox width="100%" id="__hbox2_copy2" justifyContent="SpaceBetween" height="40px">
+							<HBox width="100%" id="__hbox2_copy2" justifyContent="SpaceBetween">
 								<items>
 									<CheckBox id="__box1_copy2" text="Encadrement"/>
 									<Switch id="__switch2" state="false" customTextOn="Oui" customTextOff="Non"/>
 								</items>
 							</HBox>
-							<HBox width="100%" id="__hbox2_copy3" justifyContent="SpaceBetween" height="40px">
+							<HBox width="100%" id="__hbox2_copy3" justifyContent="SpaceBetween">
 								<items>
 									<CheckBox id="__box1_copy3" text="Responsables"/>
 									<Switch id="__switch3" state="false" customTextOn="Oui" customTextOff="Non"/>
 								</items>
 							</HBox>
-							<HBox width="100%" id="__hbox2_copy4" justifyContent="SpaceBetween" height="40px">
+							<HBox width="100%" id="__hbox2_copy4" justifyContent="SpaceBetween">
 								<items>
 									<CheckBox id="__box1_copy4" text="Opérationels"/>
 									<Switch id="__switch4" state="false" customTextOn="Oui" customTextOff="Non"/>
 								</items>
 							</HBox>
-							<HBox width="100%" id="__hbox2_copy5" height="40px">
+							<HBox width="100%" id="__hbox2_copy5">
 								<items>
 									<CheckBox id="__box1_copy5" text="Intranet"/>
 								</items>
 							</HBox>
-							<HBox width="100%" id="__hbox2_copy6" height="40px">
+							<HBox width="100%" id="__hbox2_copy6">
 								<items>
 									<CheckBox id="__box1_copy6" text="Réseau étendu"/>
 								</items>
