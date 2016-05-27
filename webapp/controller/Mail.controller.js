@@ -51,7 +51,11 @@ sap.ui.define([
 			"Victime : " + that.byId("victime").getText() +String.fromCharCode(13)+
 			"Phase : " + that.byId("phase").getText() + String.fromCharCode(13) +
 			"Description : " + that.byId("description").getText();
-			sap.m.URLHelper.triggerEmail(this.infos.dest, "Atelier Accident Travail", this.text);
+			if(sap.ui.Device.system.phone){
+					sap.m.URLHelper.triggerEmail(this.infos.dest, "Atelier Accident Travail", this.text);
+			}else{
+			    window.open(sap.m.URLHelper.normalizeEmail(this.infos.dest,"Atelier Accident Travail",this.text));
+			}
 		}
 	});
 });
