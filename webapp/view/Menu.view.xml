@@ -1,77 +1,65 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
-	xmlns:com="sap.ui.commons" xmlns:core="sap.ui.core"	 xmlns:coml ="sap.ui.commons.layout" xmlns="sap.m" controllerName="fr.ar.cia.controller.Menu">
+	xmlns:com="sap.ui.commons" xmlns:core="sap.ui.core" xmlns:coml="sap.ui.commons.layout" xmlns="sap.m"
+	controllerName="fr.ar.cia.controller.Menu">
 	<App backgroundColor="white">
-		<VBox width="100%">
-			<HBox class="headerStyle" height="17%" alignItems="Center" justifyContent="SpaceBetween">
-				<items>
-					<Image src="resource/Image2.png" width="50%"/>
-					<Image src="resource/Image1.png" width="90%"/>
-				</items>
-			</HBox>
-			<VBox alignItems="Center" height="73%" width="100%">
-				<items>
-					<coml:MatrixLayout>
-						<coml:MatrixLayoutRow>
-							<coml:MatrixLayoutCell>
-								
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<Input id="auteur"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<Text text="Auteur" />
-							</coml:MatrixLayoutCell>
-			
-						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow>
-							<coml:MatrixLayoutCell
-								hAlign="End"
-								padding="End"
-								rowSpan="1"
-								separation="None"
-								vAlign="Middle" >
-								<Image src="resource/world.jpg"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<Input id="site"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<Text text="Site"/>
-							</coml:MatrixLayoutCell>
-			
-						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow>
-							<coml:MatrixLayoutCell
-								hAlign="End"
-								padding="End"
-								rowSpan="1"
-								separation="None"
-								vAlign="Middle" >
-								<Image src="resource/Usine.jpg"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<Input id="atelier" />
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<Text text="Atelier"/>
-							</coml:MatrixLayoutCell>
-			
-						</coml:MatrixLayoutRow>
-					</coml:MatrixLayout>
-					<Text text="Communication immédiate en 3 étapes" class="sapUiSmallMargin"/>
-					<Text text="ETAPE 1"/>
-					<Button icon="sap-icon://activity-2" text="DECLARATION" press="onStep1" width="100%" busy="false"/>
-					<Text text="ETAPE 2"/>
-					<Button icon="sap-icon://wounds-doc" text="DOMMAGE" press="onStep2"/>
-					<Text text="ETAPE 3"/>
-					<Button icon="sap-icon://forward" text="DIFFUSION DE LA CIA" press="onStep3"/>
-				</items>
+		<Page enableScrolling="true" showFooter="false" showHeader="false">
+			<VBox width="100%">
+				<HBox class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
+					<items>
+						<Image src="resource/Image2.png" width="50%"/>
+						<Image src="resource/Image1.png" width="90%"/>
+					</items>
+				</HBox>
+				<VBox alignItems="Center" height="73%" width="100%">
+					<items>
+						<coml:MatrixLayout>
+							<coml:MatrixLayoutRow>
+								<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<Input id="auteur"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<Text text="Auteur"/>
+								</coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+							<coml:MatrixLayoutRow>
+								<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
+									<Image src="resource/world.jpg"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<Input id="site"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<Text text="Site"/>
+								</coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+							<coml:MatrixLayoutRow>
+								<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
+									<Image src="resource/Usine.jpg"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<Input id="atelier"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<Text text="Atelier"/>
+								</coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+						</coml:MatrixLayout>
+						<Text text="Communication immédiate en 3 étapes" class="sapUiSmallMargin"/>
+						<Text text="ETAPE 1"/>
+						<Button icon="sap-icon://activity-2" text="DECLARATION" press="onStep1" width="100%" busy="false"/>
+						<Text text="ETAPE 2"/>
+						<Button icon="sap-icon://wounds-doc" text="DOMMAGE" press="onStep2"/>
+						<Text text="ETAPE 3"/>
+						<Button icon="sap-icon://forward" text="DIFFUSION DE LA CIA" press="onStep3"/>
+					</items>
+				</VBox>
+				<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+					<items>
+						<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
+					</items>
+				</HBox>
 			</VBox>
-			<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
-				<items>
-					<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
-				</items>
-			</HBox>
-		</VBox>
+		</Page>
 	</App>
 </mvc:View>

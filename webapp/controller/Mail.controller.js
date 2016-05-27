@@ -17,7 +17,7 @@ sap.ui.define([
 			that.byId("site").setText(that.infos.Site);
 			that.byId("atelier").setText(that.infos.Atelier);
 			that.byId("victime").setText(that.infos.victime);
-			that.byId("phase").setText(that.infos.phase);
+			that.byId("phase").setText(that.infos.sujet);
 			that.byId("description").setText(that.infos.desc);
 			that.byId("Date").setText(that.infos.date);
 			
@@ -46,13 +46,12 @@ sap.ui.define([
 
 		},
 		sendMail: function() {
-			this.text = that.byId("site").getText() + " " +
-			that.byId("atelier").getText() + " " +
-			that.byId("victime").getText() + " " +
-			that.byId("phase").getText() + " " +
-			that.byId("description").getText() + " " +
-			that.byId("Date").getText();
-			sap.m.URLHelper.triggerEmail(this.infos.dest, this.infos.sujet, this.text);
+			this.text = "Site : " + that.byId("site").getText() + String.fromCharCode(13) +
+			"Atelier : " + that.byId("atelier").getText() + String.fromCharCode(13) +
+			"Victime : " + that.byId("victime").getText() +String.fromCharCode(13)+
+			"Phase : " + that.byId("phase").getText() + String.fromCharCode(13) +
+			"Description : " + that.byId("description").getText();
+			sap.m.URLHelper.triggerEmail(this.infos.dest, "Atelier Accident Travail", this.text);
 		}
 	});
 });

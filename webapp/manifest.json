@@ -15,7 +15,6 @@
 			"version": "1.32.0"
 		}
 	},
-
 	"sap.ui": {
 		"_version": "1.1.0",
 		"technology": "UI5",
@@ -37,7 +36,6 @@
 			"sap_bluecrystal"
 		]
 	},
-
 	"sap.ui5": {
 		"_version": "1.1.0",
 		"rootView": {
@@ -66,9 +64,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -105,9 +105,9 @@
 					"target": "step3"
 				},
 				{
-					"pattern":"mail/{infos}",
-					"name":"mail",
-					"target":"mail"
+					"pattern": "mail/{infos}",
+					"name": "mail",
+					"target": "mail"
 				}
 			],
 			"targets": {
@@ -131,13 +131,15 @@
 					"viewName": "Step3",
 					"viewId": "step3"
 				},
-				"mail":{
-					"viewName":"Mail",
-					"viewId":"mail"
+				"mail": {
+					"viewName": "Mail",
+					"viewId": "mail"
 				}
-				
 			}
-			
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
 	}
 }

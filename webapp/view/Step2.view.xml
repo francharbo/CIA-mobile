@@ -1,78 +1,79 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
-	xmlns:com="sap.ui.commons" xmlns:coml="sap.ui.commons.layout" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="fr.ar.cia.controller.Step">
+	xmlns:com="sap.ui.commons" xmlns:coml="sap.ui.commons.layout" xmlns="sap.m" xmlns:core="sap.ui.core"
+	controllerName="fr.ar.cia.controller.Step">
 	<App backgroundColor="white">
-		<VBox width="100%">
-			<items>
-				<HBox class="headerStyle" height="17%" alignItems="Center" justifyContent="SpaceBetween">
-					<items>
-						<Image src="resource/Image2.png" width="50%"/>
-						<Image src="resource/Image1.png" width="90%"/>
-					</items>
-				</HBox>
-				<HBox height="10%" alignItems="End" justifyContent="SpaceBetween">
-					<items>
-						<Button id="__button3" icon="sap-icon://nav-back" press="onNavBack">
-							<layoutData>
-								<FlexItemData growFactor="1"/>
-							</layoutData>
-						</Button>
-						<Button text="DOMMAGE - 2/3" width="100%" id="__button2" icon="sap-icon://wounds-doc" class="sapUiTinyMarginBegin sapUiTinyMarginEnd"
-							type="Accept">
-							<layoutData>
-								<FlexItemData growFactor="100"/>
-							</layoutData>
-						</Button>
-						<Button icon="sap-icon://forward" class="sapUiSmallMarginBegin" press="onStep3">
-							<layoutData>
-								<FlexItemData growFactor="1"/>
-							</layoutData>
-						</Button>
-					</items>
-				</HBox>
-				
-				<l:VerticalLayout class="backgroundstick" height="63%" width = "100%">
-					<coml:MatrixLayout >
-						<coml:MatrixLayoutRow>
-							<coml:MatrixLayoutCell>
-								<com:ComboBox value="FACE" width="75%">
-								</com:ComboBox>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell hAlign="End">
-								<com:CheckBox text="Tête"/>
-							</coml:MatrixLayoutCell>
-						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow>
-							<coml:MatrixLayoutCell hAlign="Bottom" >
-								<com:CheckBox text="Bras"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<com:CheckBox text="Epaule"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<com:CheckBox text="Main"/>
-							</coml:MatrixLayoutCell>
-						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow>
-							<coml:MatrixLayoutCell hAlign="End" colSpan="2">
-								<com:CheckBox text="Jambe"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<com:CheckBox text="Pied"/>
-							</coml:MatrixLayoutCell>
-						</coml:MatrixLayoutRow>
-					</coml:MatrixLayout>
-					<VBox>
-						<com:DropdownBox id="gravite" placeholder="Gravité"></com:DropdownBox>
-						<com:DropdownBox id="nature" placeholder="Nature du dommage"></com:DropdownBox>
-						<com:DropdownBox id="cause" placeholder="Cause"></com:DropdownBox>
-					</VBox>
-				</l:VerticalLayout>
-				<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
-					<items>
-						<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
-					</items>
-				</HBox>
-			</items>
-		</VBox>
+		<Page enableScrolling="true" showFooter="false" showHeader="false">
+			<VBox width="100%">
+				<items>
+					<HBox class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
+						<items>
+							<Image src="resource/Image2.png" width="50%"/>
+							<Image src="resource/Image1.png" width="90%"/>
+						</items>
+					</HBox>
+					<HBox alignItems="End" justifyContent="SpaceBetween">
+						<items>
+							<Button id="__button3" icon="sap-icon://nav-back" press="onNavBack">
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+							</Button>
+							<Button text="DOMMAGE - 2/3" width="100%" id="__button2" icon="sap-icon://wounds-doc" class="sapUiTinyMarginBegin sapUiTinyMarginEnd"
+								type="Accept">
+								<layoutData>
+									<FlexItemData growFactor="100"/>
+								</layoutData>
+							</Button>
+							<Button icon="sap-icon://forward" class="sapUiSmallMarginBegin" press="onStep3">
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+							</Button>
+						</items>
+					</HBox>
+					<l:VerticalLayout class="backgroundstick" width="100%">
+						<coml:MatrixLayout >
+							<coml:MatrixLayoutRow>
+								<coml:MatrixLayoutCell>
+									<com:ComboBox value="FACE" width="75%"></com:ComboBox>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell hAlign="End">
+									<com:CheckBox text="Tête"/>
+								</coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+							<coml:MatrixLayoutRow>
+								<coml:MatrixLayoutCell hAlign="Bottom">
+									<com:CheckBox text="Bras"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<com:CheckBox text="Epaule"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<com:CheckBox text="Main"/>
+								</coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+							<coml:MatrixLayoutRow>
+								<coml:MatrixLayoutCell hAlign="End" colSpan="2">
+									<com:CheckBox text="Jambe"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<com:CheckBox text="Pied"/>
+								</coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+						</coml:MatrixLayout>
+						<VBox>
+							<com:DropdownBox id="gravite" placeholder="Gravité"></com:DropdownBox>
+							<com:DropdownBox id="nature" placeholder="Nature du dommage"></com:DropdownBox>
+							<com:DropdownBox id="cause" placeholder="Cause"></com:DropdownBox>
+						</VBox>
+					</l:VerticalLayout>
+					<HBox class="footerStyle" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+						<items>
+							<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
+						</items>
+					</HBox>
+				</items>
+			</VBox>
+		</Page>
 	</App>
 </mvc:View>

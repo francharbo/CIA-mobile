@@ -50,6 +50,7 @@ sap.ui.define([
 			that.infos.date = this.byId("date").getValue();
 			that.infos.sujet = this.byId("sujet").getValue();
 			that.infos.desc = this.byId("desc").getValue();
+			that.infos.victime = this.byId("__box1").getValue();
 			this.getRouter().navTo("step2", {
 				infos: JSON.stringify(that.infos)
 			});

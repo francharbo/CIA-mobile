@@ -1,98 +1,100 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns:com="sap.ui.commons" xmlns:coml="sap.ui.commons.layout" xmlns="sap.m" xmlns:core="sap.ui.core"
 	controllerName="fr.ar.cia.controller.Step">
-	<App backgroundColor="white">
-		<VBox width="100%">
-			<items>
-				<HBox class="headerStyle" height="17%" alignItems="Center" justifyContent="SpaceBetween">
-					<items>
-						<Image src="resource/Image2.png" width="50%"/>
-						<Image src="resource/Image1.png" width="90%"/>
-					</items>
-				</HBox>
-				<HBox height="10%" alignItems="End" justifyContent="SpaceBetween">
-					<items>
-						<Button id="__button3" icon="sap-icon://nav-back" press="onNavBack">
-							<layoutData>
-								<FlexItemData growFactor="1"/>
-							</layoutData>
-						</Button>
-						<Button text="DECLARATION - 1/3" width="100%" id="__button2" icon="sap-icon://activity-2" class="sapUiTinyMarginBegin sapUiTinyMarginEnd"
-							type="Accept">
-							<layoutData>
-								<FlexItemData growFactor="100"/>
-							</layoutData>
-						</Button>
-						<Button icon="sap-icon://wounds-doc" class="sapUiSmallMarginBegin" press="onStep2">
-							<layoutData>
-								<FlexItemData growFactor="1"/>
-							</layoutData>
-						</Button>
-					</items>
-				</HBox>
-				<VBox height="63%">
-					<coml:MatrixLayout>
-						<coml:MatrixLayoutRow>
-							<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
-								<core:Icon src="sap-icon://time-entry-request" size="2em"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell colSpan="2">
-								<Input id="date" placeholder="Aujourd'hui"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<VBox >
-									<Text text="Date"/>
-									<Text text="Heure"/>
-								</VBox>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
-						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow>
-							<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
-								<core:Icon src="sap-icon://home" size="2em"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell colSpan="2">
-								<Input id="siteStep1"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<Text text="Site"/>
-							</coml:MatrixLayoutCell>
-						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow >
-							<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
-								<core:Icon src="sap-icon://factory" size="2em"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell colSpan="2">
-								<Input id="atelierStep1"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell>
-								<Text text="Atelier"/>
-							</coml:MatrixLayoutCell>
-						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow >
-							<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
-								<core:Icon src="sap-icon://person-placeholder" size="2em"/>
-							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell colSpan="2">
-								<ComboBox id="__box1">
-									<items>
-										<core:ListItem text="CDI" key="item1" id="__item6"/>
-										<core:ListItem text="CDD" key="item2" id="__item7"/>
-										<core:ListItem text="Stagiaire" key="item3" id="__item8"/>
-									</items>
-								</ComboBox>
-							</coml:MatrixLayoutCell>
-						</coml:MatrixLayoutRow>
-					</coml:MatrixLayout>
-					<Label text="Description opération/tâches" class="sapUiSmallMarginTop"/>
-					<Input id="sujet" placeholder="Sujet"/>
-					<TextArea id="desc" editable="true" width="100%"/>
-					<HBox alignItems="Center" justifyContent="Center">
-						<Button text="DOMMAGE" class="sapUiSmallMarginEnd"/>
-						<Button icon="sap-icon://action" text="Diffusion CIA" class="sapUiSmallMarginBegin"/>
+	<App  backgroundColor="white">
+		<Page enableScrolling="true" showFooter="false" showHeader="false">
+			<VBox width="100%">
+				<items>
+					<HBox class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
+						<items>
+							<Image src="resource/Image2.png" width="50%"/>
+							<Image src="resource/Image1.png" width="90%"/>
+						</items>
 					</HBox>
-				</VBox>
-			</items>
-		</VBox>
+					<HBox alignItems="End" justifyContent="SpaceBetween">
+						<items>
+							<Button id="__button3" icon="sap-icon://nav-back" press="onNavBack">
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+							</Button>
+							<Button text="DECLARATION - 1/3" width="100%" id="__button2" icon="sap-icon://activity-2" class="sapUiTinyMarginBegin sapUiTinyMarginEnd"
+								type="Accept">
+								<layoutData>
+									<FlexItemData growFactor="100"/>
+								</layoutData>
+							</Button>
+							<Button icon="sap-icon://wounds-doc" class="sapUiSmallMarginBegin" press="onStep2">
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+							</Button>
+						</items>
+					</HBox>
+					<VBox >
+						<coml:MatrixLayout>
+							<coml:MatrixLayoutRow>
+								<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
+									<core:Icon src="sap-icon://time-entry-request" size="2em"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell colSpan="2">
+									<Input id="date" placeholder="Aujourd'hui"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<VBox >
+										<Text text="Date"/>
+										<Text text="Heure"/>
+									</VBox>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+							<coml:MatrixLayoutRow>
+								<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
+									<core:Icon src="sap-icon://home" size="2em"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell colSpan="2">
+									<Input id="siteStep1"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<Text text="Site"/>
+								</coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+							<coml:MatrixLayoutRow >
+								<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
+									<core:Icon src="sap-icon://factory" size="2em"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell colSpan="2">
+									<Input id="atelierStep1"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<Text text="Atelier"/>
+								</coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+							<coml:MatrixLayoutRow >
+								<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
+									<core:Icon src="sap-icon://person-placeholder" size="2em"/>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell colSpan="2">
+									<ComboBox id="__box1">
+										<items>
+											<core:ListItem text="CDI" key="item1" id="__item6"/>
+											<core:ListItem text="CDD" key="item2" id="__item7"/>
+											<core:ListItem text="Stagiaire" key="item3" id="__item8"/>
+										</items>
+									</ComboBox>
+								</coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+						</coml:MatrixLayout>
+						<Label text="Description opération/tâches" class="sapUiSmallMarginTop"/>
+						<Input id="sujet" placeholder="Sujet"/>
+						<TextArea id="desc" editable="true" width="100%"/>
+						<HBox alignItems="Center" justifyContent="Center">
+							<Button text="DOMMAGE" class="sapUiSmallMarginEnd"/>
+							<Button icon="sap-icon://action" text="Diffusion CIA" class="sapUiSmallMarginBegin"/>
+						</HBox>
+					</VBox>
+				</items>
+			</VBox>
+		</Page>
 	</App>
 </mvc:View>

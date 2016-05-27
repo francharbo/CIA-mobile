@@ -6,7 +6,8 @@
   "build": {
     "targetFolder": "dist",
     "sourceFolder": "webapp",
-    "buildRequired": true
+    "buildRequired": true,
+    "lastBuildDateTime": "Fri, 27 May 2016 09:30:40 GMT"
   },
   "generation": [
     {
@@ -40,5 +41,10 @@
     "mockRequestsFilePath": "",
     "loadJSONFiles": false,
     "loadCustomRequests": false
+  },
+  "hcpdeploy": {
+    "account": "a33c3886c",
+    "name": "cia",
+    "lastVersionWeTriedToDeploy": "1.0.0"
   }
 }
