@@ -37,7 +37,7 @@
 								<core:Icon src="sap-icon://time-entry-request" size="2em"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell colSpan="2">
-								<Input placeholder="Aujourd'hui"/>
+								<Input id="date" placeholder="Aujourd'hui"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell>
 								<VBox >
@@ -51,8 +51,7 @@
 							<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
 								<core:Icon src="sap-icon://home" size="2em"/>
 							</coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell
-							colSpan="2">
+							<coml:MatrixLayoutCell colSpan="2">
 								<Input id="siteStep1"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell>
@@ -86,18 +85,13 @@
 						</coml:MatrixLayoutRow>
 					</coml:MatrixLayout>
 					<Label text="Description opération/tâches" class="sapUiSmallMarginTop"/>
-					<Input placeholder ="Sujet"/>
-					<TextArea editable="true" width="100%" />
+					<Input id="sujet" placeholder="Sujet"/>
+					<TextArea id="desc" editable="true" width="100%"/>
 					<HBox alignItems="Center" justifyContent="Center">
 						<Button text="DOMMAGE" class="sapUiSmallMarginEnd"/>
 						<Button icon="sap-icon://action" text="Diffusion CIA" class="sapUiSmallMarginBegin"/>
 					</HBox>
 				</VBox>
-				<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
-					<items>
-						<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
-					</items>
-				</HBox>
 			</items>
 		</VBox>
 	</App>

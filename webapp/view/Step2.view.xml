@@ -1,5 +1,5 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
-	xmlns:com="sap.ui.commons" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="fr.ar.cia.controller.Step">
+	xmlns:com="sap.ui.commons" xmlns:coml="sap.ui.commons.layout" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="fr.ar.cia.controller.Step">
 	<App backgroundColor="white">
 		<VBox width="100%">
 			<items>
@@ -29,29 +29,44 @@
 						</Button>
 					</items>
 				</HBox>
-				<FlexBox alignItems="Center" justifyContent="Center" direction="Column" height="63%">
-					<com:Image src="resource/stickman.png" useMap="mapInjured">
-						<com:layoutData>
-							<FlexItemData id="injuredStickMan"/>
-						</com:layoutData>
-					</com:Image>
-					<com:ImageMap growFactor="1">
-						<com:areas>
-							<com:Area id="id" shape="rect" coords="40,20,100,80" href="http://www.perdu.com" alt="head" validationSuccess="" validationError=""
-								parseError="" formatError=""></com:Area>
-						</com:areas>
-						<!-- sap.ui.commons.Area -->
-					</com:ImageMap>
+				
+				<l:VerticalLayout class="backgroundstick" height="63%" width = "100%">
+					<coml:MatrixLayout >
+						<coml:MatrixLayoutRow>
+							<coml:MatrixLayoutCell>
+								<com:ComboBox value="FACE" width="75%">
+								</com:ComboBox>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell hAlign="End">
+								<com:CheckBox text="Tête"/>
+							</coml:MatrixLayoutCell>
+						</coml:MatrixLayoutRow>
+						<coml:MatrixLayoutRow>
+							<coml:MatrixLayoutCell hAlign="Bottom" >
+								<com:CheckBox text="Bras"/>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell>
+								<com:CheckBox text="Epaule"/>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell>
+								<com:CheckBox text="Main"/>
+							</coml:MatrixLayoutCell>
+						</coml:MatrixLayoutRow>
+						<coml:MatrixLayoutRow>
+							<coml:MatrixLayoutCell hAlign="End" colSpan="2">
+								<com:CheckBox text="Jambe"/>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell>
+								<com:CheckBox text="Pied"/>
+							</coml:MatrixLayoutCell>
+						</coml:MatrixLayoutRow>
+					</coml:MatrixLayout>
 					<VBox>
-						<com:DropdownBox id="gravite" placeholder="Gravité">
-						</com:DropdownBox>
+						<com:DropdownBox id="gravite" placeholder="Gravité"></com:DropdownBox>
 						<com:DropdownBox id="nature" placeholder="Nature du dommage"></com:DropdownBox>
 						<com:DropdownBox id="cause" placeholder="Cause"></com:DropdownBox>
-						<layoutData>
-							<FlexItemData growFactor="1"/>
-						</layoutData>
 					</VBox>
-				</FlexBox>
+				</l:VerticalLayout>
 				<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 					<items>
 						<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>

@@ -1,0 +1,32 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:com="sap.ui.commons" xmlns:coml="sap.ui.commons.layout" xmlns="sap.m" xmlns:core="sap.ui.core"
+	controllerName="fr.ar.cia.controller.Mail">
+	<Page showHeader="false">
+		<VBox width="100%">
+			<HBox class="headerStyle" height="17%" alignItems="Center" justifyContent="SpaceBetween">
+				<items>
+					<Image src="resource/Image2.png" width="50%"/>
+					<Image src="resource/Image1.png" width="90%"/>
+				</items>
+			</HBox>
+			<Button icon="sap-icon://nav-back" press="onNavBack"/>
+			<Panel width="80%" class="mail">
+				<VBox>
+					<Title text="Alerte Accident Travail"/>
+					<Label id="Date"/>
+				</VBox>
+				<VBox>
+					<ObjectStatus id="site" title="Site"/>
+					<ObjectStatus id="atelier" title="Atelier"/>
+					<ObjectStatus id="victime" title="Victime"/>
+					<ObjectStatus id="phase" title="Phase"/>
+					<ObjectStatus id="description" title="Description"/>
+					<Image src="/resource/stickmanhurt.png"/>
+					<Text id="nom" text="{login>login}"/>
+					<Text id="position" text="{login>position}"/>
+				</VBox>
+			</Panel>
+			<Button text="Envoi" class="sapUiSmallMarginEnd" type="Accept" press="sendMail"/>
+		</VBox>
+	</Page>
+</mvc:View>

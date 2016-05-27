@@ -18,7 +18,9 @@ sap.ui.define([
 			
 			for (var i = 0; i < oModel.length; i++) {
 				if (oModel[i]["login"] === login && oModel[i]["password"] === password) {
-					this.getRouter().navTo("menu");
+					this.getRouter().navTo("menu",{
+						usrNumber:i
+					});
 					return;
 				}
 			}

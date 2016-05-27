@@ -85,24 +85,29 @@
 					"target": "login"
 				},
 				{
-					"pattern": "Menu",
+					"pattern": "Menu/{usrNumber}",
 					"name": "menu",
 					"target": "menu"
 				},
 				{
-					"pattern": "etape1",
+					"pattern": "etape1/{infos}",
 					"name": "step1",
 					"target": "step1"
 				},
 				{
-					"pattern": "etape2",
+					"pattern": "etape2/{infos}",
 					"name": "step2",
 					"target": "step2"
 				},
 				{
-					"pattern": "etape3",
+					"pattern": "etape3/{infos}",
 					"name": "step3",
 					"target": "step3"
+				},
+				{
+					"pattern":"mail/{infos}",
+					"name":"mail",
+					"target":"mail"
 				}
 			],
 			"targets": {
@@ -125,6 +130,10 @@
 				"step3": {
 					"viewName": "Step3",
 					"viewId": "step3"
+				},
+				"mail":{
+					"viewName":"Mail",
+					"viewId":"mail"
 				}
 				
 			}

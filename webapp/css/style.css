@@ -11,3 +11,15 @@
  .footerStyle {
  	background-color: #8A2908;
  }
+ .backgroundstick {
+ 	width:320px;
+    height:302px;
+ 	background-image: url(/webapp/resource/stickman.png);
+ 	background-repeat:no-repeat;
+	background-position: center; 
+	position:relative;
+ }
+ .mail{
+ 	margin-left: auto ;
+	margin-right: auto ;
+ }
