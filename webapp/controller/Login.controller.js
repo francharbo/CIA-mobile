@@ -10,6 +10,20 @@ sap.ui.define([
 			self = this;
 			this.setModel(this.getOwnerComponent().getModel("login"));
 		},
+		
+		onAfterRendering: function() {
+			var header = this.byId("header");
+			var headerLength = header.getHeight().length;
+			var textLogo = this.byId("textLogo");
+			textLogo.setHeight($(window).height()*header.getHeight().substring(0, headerLength-1)/100+ "px");
+			var phoneLogo = this.byId("phoneLogo");
+			phoneLogo.setHeight($(window).height()*header.getHeight().substring(0, headerLength-1)/100+ "px");
+			
+			var footer = this.byId("footer");
+			var footerLength = footer.getHeight().length;
+			var avrilLogo = this.byId("avrilLogo");
+			avrilLogo.setHeight($(window).height()*footer.getHeight().substring(0, footerLength-1)/100+ "px");
+		},
 
 		onLog: function() {
 			var login = this.byId("collabInput").getValue();
@@ -30,9 +44,8 @@ sap.ui.define([
 					return;
 				}
 			}
-
-			sap.ui.commons.MessageBox.alert("Hello World from MessageBox.alert()!");
-
+			
+			sap.ui.commons.MessageBox.alert("Login/Mot de passe incorrect");	
 		}
 	});
 
