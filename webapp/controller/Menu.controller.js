@@ -12,6 +12,10 @@ var that;
 		},
 		_onObjectMatched: function(oEvent) {
 			that.usr = oEvent.getParameter("arguments").usrNumber;
+			this.getView().bindElement({
+				path:"/login/" + that.usr,
+				model:"usr"
+			});
 		},
 		
 		onStep1: function() {

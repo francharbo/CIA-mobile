@@ -1,0 +1,71 @@
+{
+	"Visites": [{
+		"Id":"01",
+		"Site": "Paris",
+		"atelier": "Evry",
+		"victime": "bla",
+		"phase": "Test",
+		"description": "main découpé par scie",
+		"Date": "31/05/2016",
+		"gravite":"forte",
+		"PartiesBlessées":[{
+			"Tete":false,
+			"Epaule":false,
+			"Torse":false,
+			"Main":true,
+			"Jambes":false,
+			"pied":false
+		}]
+	}, {
+		"Id":"02",
+		"Site": "Lyon",
+		"atelier": "Villeurbanne",
+		"victime": "Zac",
+		"phase": "Test",
+		"description": "pied découpé par scie",
+		"Date": "31/05/2016",
+		"gravite":"forte",
+		"PartiesBlessées":[{
+			"Tete":false,
+			"Epaule":false,
+			"Torse":false,
+			"Main":false,
+			"Jambes":false,
+			"pied":true
+		}]
+	}, {
+		"Id":"03",
+		"Site": "Paris",
+		"atelier": "Esbly",
+		"victime": "bla",
+		"phase": "Test",
+		"description": "main découpé par scie",
+		"Date": "31/05/2016",
+		"gravite":"forte",
+		"PartiesBlessées":[{
+			"Tete":false,
+			"Epaule":false,
+			"Torse":false,
+			"Main":true,
+			"Jambes":false,
+			"pied":false
+		}]
+	}, {
+		"Id":"04",
+		"Site": "Paris",
+		"atelier": "Chamigny",
+		"victime": "bla",
+		"phase": "Test",
+		"description": "pied tordu",
+		"Date": "31/05/2016",
+		"gravite":"faible",
+		"PartiesBlessées":[{
+			"Tete":false,
+			"Epaule":false,
+			"Torse":false,
+			"Main":false,
+			"Jambes":false,
+			"pied":true
+		}]
+	}]
+}

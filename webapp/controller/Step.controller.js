@@ -7,8 +7,9 @@ sap.ui.define([
 
 		onInit: function() {
 			that = this;
-			
+			this.getView().setModel(this.getOwnerComponent().getModel("Visites"));
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.getRoute("admin").attachPatternMatched(this._onObjectMatchedAdmin, this);
 			oRouter.getRoute("step1").attachPatternMatched(this._onObjectMatched1, this);
 			oRouter.getRoute("step2").attachPatternMatched(this._onObjectMatched, this);
 			oRouter.getRoute("step3").attachPatternMatched(this._onObjectMatched, this);
@@ -17,8 +18,11 @@ sap.ui.define([
 			that.infos = oEvent.getParameter("arguments").infos;
 		},
 		_onObjectMatched1: function(oEvent) {
-			that.infos= {};
+			that.infos = {};
 			that.infos.usr = oEvent.getParameter("arguments").infos;
+		},
+		_onObjectMatchedAdmin:function(oEvent){
+			that.usrNumber = oEvent.getParameter("arguments").usrNumber;
 		},
 		/**
 		 * Navigates back in the browser history, if the entry was created by this app.
@@ -99,6 +103,11 @@ sap.ui.define([
 				}
 			});
 			dialog.open();
+		},
+		goToMenu: function() {
+			this.getRouter().navTo("menu", {
+				usrNumber: that.usrNumber
+			});
 		}
 
 	});
