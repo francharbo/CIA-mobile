@@ -11,12 +11,12 @@
 					</items>
 				</HBox>
 				<Button width="100%" text="GoToMenu" press="goToMenu"/>
-				<table:Table id="table" rows="{/Visites}">
+				<table:Table id="table" rows="{/Visites}"  visibleRowCount="8">
 					<table:columns>
 						<table:Column>
 							<Label text="site"/>
 							<table:template>
-								<Link text="{Site}" press="navTo" cust:Id="{Id}"/>
+								<Link text="{Site}" press="updateInjury" cust:Id="{Id}"/>
 							</table:template>
 						</table:Column>
 						<table:Column>
@@ -29,6 +29,12 @@
 							<Label text="Gravité"/>
 							<table:template>
 								<Text text="{gravite}"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="Date"/>
+							<table:template>
+								<Text text="{Date}"/>
 							</table:template>
 						</table:Column>
 					</table:columns>

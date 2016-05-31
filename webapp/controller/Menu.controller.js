@@ -25,6 +25,13 @@ var that;
 		},
 		_onObjectMatched: function(oEvent) {
 			that.usr = oEvent.getParameter("arguments").usrNumber;
+			var visite = parseInt(oEvent.getParameter("arguments").Id) - 1;
+			if(typeof visite !== "undefined"){
+				this.getView().bindElement({
+				path:"/Visites/" + visite,
+				model:"injury"
+			});
+			}
 			this.getView().bindElement({
 				path:"/login/" + that.usr,
 				model:"usr"
@@ -38,10 +45,14 @@ var that;
 			});	
 		},
 		onStep2: function() {
-			this.getRouter().navTo("step2");	
+			this.getRouter().navTo("step2",{
+				infos:that.usr
+			});	
 		},
 		onStep3: function() {
-			this.getRouter().navTo("step3");	
+			this.getRouter().navTo("step3",{
+				infos:that.usr
+			});
 		}
 	});
 

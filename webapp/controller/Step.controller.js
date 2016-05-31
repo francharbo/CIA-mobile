@@ -108,6 +108,13 @@ sap.ui.define([
 			this.getRouter().navTo("menu", {
 				usrNumber: that.usrNumber
 			});
+		},
+		updateInjury:function(oEvent){
+			var id = oEvent.getSource().data("Id");
+			this.getRouter().navTo("menu",{
+				usrNumber: that.usrNumber,
+				Id: id
+			});
 		}
 
 	});

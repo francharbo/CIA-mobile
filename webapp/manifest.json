@@ -85,7 +85,7 @@
 					"target": "login"
 				},
 				{
-					"pattern": "Menu/{usrNumber}",
+					"pattern": "Menu/{usrNumber}/:Id:",
 					"name": "menu",
 					"target": "menu"
 				},

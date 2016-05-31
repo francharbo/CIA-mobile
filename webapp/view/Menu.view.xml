@@ -16,7 +16,7 @@
 							<coml:MatrixLayoutRow>
 								<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
-									<Input id="auteur"/>
+									<Input id="auteur" value="{injury>Auteur}"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
 									<Text text="Auteur"/>
