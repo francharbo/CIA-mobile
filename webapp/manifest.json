@@ -90,22 +90,22 @@
 					"target": "menu"
 				},
 				{
-					"pattern": "etape1/{infos}",
+					"pattern": "etape1/{usrNumber}/{Id}",
 					"name": "step1",
 					"target": "step1"
 				},
 				{
-					"pattern": "etape2/{infos}",
+					"pattern": "etape2/{usrNumber}/{Id}",
 					"name": "step2",
 					"target": "step2"
 				},
 				{
-					"pattern": "etape3/{infos}",
+					"pattern": "etape3/{usrNumber}/{Id}",
 					"name": "step3",
 					"target": "step3"
 				},
 				{
-					"pattern": "mail/{infos}",
+					"pattern": "mail/{usrNumber}/{Id}",
 					"name": "mail",
 					"target": "mail"
 				},

@@ -18,10 +18,11 @@
 				<VBox>
 					<ObjectStatus id="site" title="Site"/>
 					<ObjectStatus id="atelier" title="Atelier"/>
-					<ObjectStatus id="victime" title="Victime"/>
+					<ObjectStatus id="victime" title="Contrat"/>
 					<ObjectStatus id="phase" title="Phase"/>
 					<ObjectStatus id="description" title="Description"/>
-					<Image src="/resource/stickmanhurt.png"/>
+					<ObjectStatus  title="Parties Blessées"/>
+					<TextArea id="hurt" editable="false" />
 					<Text id="nom" text="{login>login}"/>
 					<Text id="position" text="{login>position}"/>
 				</VBox>

@@ -10,8 +10,19 @@
 						<Image src="resource/Image1.png" width="90%"/>
 					</items>
 				</HBox>
-				<Button width="100%" text="GoToMenu" press="goToMenu"/>
-				<table:Table id="table" rows="{/Visites}"  visibleRowCount="8">
+				<FlexBox alignItems="Begin">
+					<Button width="100%" text="Go To Menu" press="goToMenu">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Button>
+					<Button width="100%" text="Export Excel" press="Export">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Button>
+				</FlexBox>
+				<table:Table id="table" rows="{/Visites}" visibleRowCount="8">
 					<table:columns>
 						<table:Column>
 							<Label text="site"/>
@@ -39,7 +50,6 @@
 						</table:Column>
 					</table:columns>
 				</table:Table>
-				
 				<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 					<items>
 						<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>

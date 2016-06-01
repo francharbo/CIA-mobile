@@ -29,7 +29,6 @@ sap.ui.define([
 			var login = this.byId("collabInput").getValue();
 			var password = this.byId("pwd").getValue();
 			var oModel = self.getModel("login").getProperty("/loginData");
-
 			for (var i = 0; i < oModel.length; i++) {
 				if (oModel[i]["login"] === login && oModel[i]["password"] === password) {
 					if (oModel[i].admin) {

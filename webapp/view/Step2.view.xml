@@ -1,6 +1,6 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns:com="sap.ui.commons" xmlns:coml="sap.ui.commons.layout" xmlns="sap.m" xmlns:core="sap.ui.core"
-	controllerName="fr.ar.cia.controller.Step">
+	xmlns:cust="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="fr.ar.cia.controller.Step">
 	<App backgroundColor="white">
 		<Page enableScrolling="true" showFooter="false" showHeader="false">
 			<VBox width="100%">
@@ -31,42 +31,42 @@
 							</Button>
 						</items>
 					</HBox>
-					<l:VerticalLayout class="backgroundstick" width="100%">
-						<coml:MatrixLayout >
-							<coml:MatrixLayoutRow>
-								<coml:MatrixLayoutCell>
-									<com:ComboBox value="FACE" width="75%"></com:ComboBox>
-								</coml:MatrixLayoutCell>
-								<coml:MatrixLayoutCell hAlign="End">
-									<com:CheckBox text="Tête"/>
-								</coml:MatrixLayoutCell>
-							</coml:MatrixLayoutRow>
-							<coml:MatrixLayoutRow>
-								<coml:MatrixLayoutCell hAlign="Bottom">
-									<com:CheckBox text="Bras"/>
-								</coml:MatrixLayoutCell>
-								<coml:MatrixLayoutCell>
-									<com:CheckBox text="Epaule"/>
-								</coml:MatrixLayoutCell>
-								<coml:MatrixLayoutCell>
-									<com:CheckBox text="Main"/>
-								</coml:MatrixLayoutCell>
-							</coml:MatrixLayoutRow>
-							<coml:MatrixLayoutRow>
-								<coml:MatrixLayoutCell hAlign="End" colSpan="2">
-									<com:CheckBox text="Jambe"/>
-								</coml:MatrixLayoutCell>
-								<coml:MatrixLayoutCell>
-									<com:CheckBox text="Pied"/>
-								</coml:MatrixLayoutCell>
-							</coml:MatrixLayoutRow>
-						</coml:MatrixLayout>
-						<VBox>
-							<com:DropdownBox id="gravite" placeholder="Gravité"></com:DropdownBox>
-							<com:DropdownBox id="nature" placeholder="Nature du dommage"></com:DropdownBox>
-							<com:DropdownBox id="cause" placeholder="Cause"></com:DropdownBox>
-						</VBox>
-					</l:VerticalLayout>
+					<coml:MatrixLayout height="200px">
+						<coml:MatrixLayoutRow id="rowHead" height="22%">
+							<coml:MatrixLayoutCell >
+								<com:ComboBox value="FACE" width="75%"></com:ComboBox>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell hAlign="Center">
+								<Image id="Tete" src="resource/Tete.png" press="InjurySelect" cust:desc="Tete" cust:status="{Visites>PartiesBlessees/Tete}"/>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
+						</coml:MatrixLayoutRow>
+						<coml:MatrixLayoutRow id="rowMiddle" height="22%">
+							<coml:MatrixLayoutCell hAlign="End">
+								<Image id="Bras" src="resource/Bras.png" press="InjurySelect" cust:desc="Bras" cust:status="{Visites>PartiesBlessees/Bras}"/>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell hAlign="Center">
+								<Image id="Torse" src="resource/Torse.png" press="InjurySelect" cust:desc="Torse" cust:status="{Visites>PartiesBlessees/Torse}"/>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell halign="Begin">
+								<Image id="Main" src="resource/Main.png" press="InjurySelect" cust:desc="Main" cust:status="{Visites>PartiesBlessees/Main}"/>
+							</coml:MatrixLayoutCell>
+						</coml:MatrixLayoutRow>
+						<coml:MatrixLayoutRow id="rowBottom" height="22%">
+							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell hAlign="Center" vAlign="Middle">
+								<FlexBox alignItems="Center" justifyContent="Center">
+									<Image id="Jambe" src="resource/Jambe.png" press="InjurySelect" cust:desc="Jambe" cust:status="{Visites>PartiesBlessees/Jambe}"/>
+									<Image id="Pied" src="resource/Pied.png" press="InjurySelect" cust:desc="Pied" cust:status="{Visites>PartiesBlessees/Pied}"/>
+								</FlexBox>
+							</coml:MatrixLayoutCell>
+						</coml:MatrixLayoutRow>
+					</coml:MatrixLayout >
+					<VBox justifyContent="Center" alignItems="Center">
+						<com:DropdownBox id="gravite" placeholder="Gravité"></com:DropdownBox>
+						<com:DropdownBox id="nature" placeholder="Nature du dommage"></com:DropdownBox>
+						<com:DropdownBox id="cause" placeholder="Cause"></com:DropdownBox>
+					</VBox>
 					<HBox class="footerStyle" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 						<items>
 							<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>

@@ -80,7 +80,7 @@
 							</VBox>
 						</f:SimpleForm>
 						<HBox justifyContent="Center">
-							<Button text="Autre" type="Accept" icon="sap-icon://email" class="sapUiSmallMarginEnd" press="onOtherButton"/>
+							<Button text="@ Autre(s)" type="Accept" class="sapUiSmallMarginEnd" press="onOtherButton"/>
 							<Button text="Envoyer CIA" type="Reject" class="sapUiSmallMarginBegin"/>
 						</HBox>
 					</VBox>

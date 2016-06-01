@@ -16,7 +16,7 @@
 							<coml:MatrixLayoutRow>
 								<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
-									<Input id="auteur" value="{injury>Auteur}"/>
+									<Input id="auteur" value="{Visites>Auteur}"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
 									<Text text="Auteur"/>
@@ -27,7 +27,7 @@
 									<Image src="resource/world.jpg"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
-									<Input id="site"/>
+									<Input id="site" value="{Visites>Site}"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
 									<Text text="Site"/>
@@ -38,7 +38,7 @@
 									<Image src="resource/Usine.jpg"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
-									<Input id="atelier"/>
+									<Input id="atelier" value="{Visites>atelier}"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
 									<Text text="Atelier"/>

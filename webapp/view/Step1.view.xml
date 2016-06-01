@@ -38,7 +38,7 @@
 									<core:Icon src="sap-icon://time-entry-request" size="2em"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell colSpan="2">
-									<Input id="date" placeholder="Aujourd'hui"/>
+									<Input id="date" placeholder="Aujourd'hui" value="{Visites>Date}"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
 									<VBox >
@@ -53,7 +53,7 @@
 									<core:Icon src="sap-icon://home" size="2em"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell colSpan="2">
-									<Input id="siteStep1"/>
+									<Input id="siteStep1" value="{Visites>Site}"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
 									<Text text="Site"/>
@@ -64,7 +64,7 @@
 									<core:Icon src="sap-icon://factory" size="2em"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell colSpan="2">
-									<Input id="atelierStep1"/>
+									<Input id="atelierStep1" value="{Visites>atelier}"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
 									<Text text="Atelier"/>
@@ -86,8 +86,8 @@
 							</coml:MatrixLayoutRow>
 						</coml:MatrixLayout>
 						<Label text="Description opération/tâches" class="sapUiSmallMarginTop"/>
-						<Input id="sujet" placeholder="Sujet"/>
-						<TextArea id="desc" editable="true" width="100%"/>
+						<Input id="sujet" placeholder="Sujet" value="{Visites>phase}"/>
+						<TextArea id="desc" editable="true" width="100%" value="{Visites>description}"/>
 						<HBox alignItems="Center" justifyContent="Center">
 							<Button text="DOMMAGE" class="sapUiSmallMarginEnd"/>
 							<Button icon="sap-icon://action" text="Diffusion CIA" class="sapUiSmallMarginBegin"/>

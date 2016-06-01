@@ -7,6 +7,7 @@
 		"victime": "bla",
 		"phase": "Test",
 		"description": "main découpé par scie",
+		"destinataire":"",
 		"Date": "31/05/2016",
 		"gravite":"forte",
 		"PartiesBlessees":[{
@@ -25,6 +26,7 @@
 		"victime": "Zac",
 		"phase": "Test",
 		"description": "pied découpé par scie",
+		"destinataire":"",
 		"Date": "31/05/2016",
 		"gravite":"forte",
 		"PartiesBlessees":[{
@@ -43,16 +45,17 @@
 		"victime": "bla",
 		"phase": "Test",
 		"description": "main découpé par scie",
+		"destinataire":"",
 		"Date": "31/05/2016",
 		"gravite":"forte",
-		"PartiesBlessees":[{
+		"PartiesBlessees":{
 			"Tete":false,
 			"Epaule":false,
 			"Torse":false,
 			"Main":true,
 			"Jambes":false,
 			"pied":false
-		}]
+		}
 	}, {
 		"Id":"04",
 		"Auteur":"foo",
@@ -61,6 +64,7 @@
 		"victime": "bla",
 		"phase": "Test",
 		"description": "pied tordu",
+		"destinataire":"",
 		"Date": "31/05/2016",
 		"gravite":"faible",
 		"PartiesBlessees":[{
