@@ -31,8 +31,8 @@
 							</Button>
 						</items>
 					</HBox>
-					<l:VerticalLayout class="backgroundstick" width="100%">
-						<coml:MatrixLayout >
+					<l:VerticalLayout>
+						<coml:MatrixLayout class="backgroundstick">
 							<coml:MatrixLayoutRow>
 								<coml:MatrixLayoutCell>
 									<com:ComboBox value="FACE" width="75%"></com:ComboBox>

@@ -80,8 +80,8 @@
 							</VBox>
 						</f:SimpleForm>
 						<HBox justifyContent="Center">
-							<Button text="Autre" type="Accept" icon="sap-icon://email" class="sapUiSmallMarginEnd" press="onOtherButton"/>
-							<Button text="Envoyer CIA" type="Reject" class="sapUiSmallMarginBegin"/>
+							<Button text="Autre" icon="sap-icon://arobase" class="sapUiSmallMarginEnd blueIcon" press="onOtherButton"/>
+							<Button text="Envoyer" icon="sap-icon://email" type="Reject" class="sapUiSmallMarginBegin"/>
 						</HBox>
 					</VBox>
 					<HBox class="footerStyle" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">

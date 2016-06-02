@@ -5,10 +5,10 @@
 		<Page enableScrolling="true" showFooter="false" showHeader="false">
 			<VBox width="100%">
 				<items>
-					<HBox class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
+					<HBox id="header" class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
 						<items>
-							<Image src="resource/Image2.png" width="50%"/>
-							<Image src="resource/Image1.png" width="90%"/>
+							<Image id="phoneLogo" src="resource/Image2.png" width="50%"/>
+							<Image id="textLogo" src="resource/Image1.png" width="90%"/>
 						</items>
 					</HBox>
 					<HBox alignItems="End" justifyContent="SpaceBetween">
@@ -72,7 +72,7 @@
 							</coml:MatrixLayoutRow>
 							<coml:MatrixLayoutRow >
 								<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
-									<core:Icon src="sap-icon://person-placeholder" size="2em"/>
+									<core:Icon src="sap-icon://person-placeholder" size="2em" press="onPerson"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell colSpan="2">
 									<ComboBox id="__box1">
@@ -87,10 +87,17 @@
 						</coml:MatrixLayout>
 						<Label text="Description opération/tâches" class="sapUiSmallMarginTop"/>
 						<Input id="sujet" placeholder="Sujet"/>
+						<Label text="Fait accidentel" class="sapUiSmallMarginTop"/>
 						<TextArea id="desc" editable="true" width="100%"/>
 						<HBox alignItems="Center" justifyContent="Center">
 							<Button text="DOMMAGE" class="sapUiSmallMarginEnd"/>
 							<Button icon="sap-icon://action" text="Diffusion CIA" class="sapUiSmallMarginBegin"/>
+							<Button icon="sap-icon://camera"/>
+						</HBox>
+						<HBox id="footer" class="footerStyle" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+							<items>
+								<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
+							</items>
 						</HBox>
 					</VBox>
 				</items>

@@ -23,6 +23,17 @@
 								</coml:MatrixLayoutCell>
 							</coml:MatrixLayoutRow>
 							<coml:MatrixLayoutRow>
+								<coml:MatrixLayoutCell>
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<Input id="societe"/>
+									<Input id="domain" visible="false"/>								
+								</coml:MatrixLayoutCell>
+								<coml:MatrixLayoutCell>
+									<Text text="Société"/>
+								</coml:MatrixLayoutCell>
+							</coml:MatrixLayoutRow>
+							<coml:MatrixLayoutRow>
 								<coml:MatrixLayoutCell hAlign="End" padding="End" rowSpan="1" separation="None" vAlign="Middle">
 									<Image src="resource/world.jpg"/>
 								</coml:MatrixLayoutCell>

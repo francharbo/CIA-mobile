@@ -13,6 +13,21 @@ sap.ui.define([
 			oRouter.getRoute("step2").attachPatternMatched(this._onObjectMatched, this);
 			oRouter.getRoute("step3").attachPatternMatched(this._onObjectMatched, this);
 		},
+		
+		onAfterRendering: function() {
+			var header = this.byId("header");
+			var headerLength = header.getHeight().length;
+			var textLogo = this.byId("textLogo");
+			textLogo.setHeight($(window).height()*header.getHeight().substring(0, headerLength-1)/100+ "px");
+			var phoneLogo = this.byId("phoneLogo");
+			phoneLogo.setHeight($(window).height()*header.getHeight().substring(0, headerLength-1)/100+ "px");
+			
+			var footer = this.byId("footer");
+			var footerLength = footer.getHeight().length;
+			var avrilLogo = this.byId("avrilLogo");
+			avrilLogo.setHeight($(window).height()*footer.getHeight().substring(0, footerLength-1)/100+ "px");
+		},
+		
 		_onObjectMatched: function(oEvent) {
 			that.infos = oEvent.getParameter("arguments").infos;
 		},
@@ -20,6 +35,7 @@ sap.ui.define([
 			that.infos= {};
 			that.infos.usr = oEvent.getParameter("arguments").infos;
 		},
+		
 		/**
 		 * Navigates back in the browser history, if the entry was created by this app.
 		 * If not, it navigates to the Fiori Launchpad home page.
@@ -84,6 +100,47 @@ sap.ui.define([
 						that.getRouter().navTo("mail", {
 							infos: JSON.stringify(infos)
 						});
+						dialog.close();
+						//self.onValiderBase("Va");
+					}
+				}),
+				endButton: new sap.m.Button({
+					text: "Annuler",
+					press: function() {
+						dialog.close();
+					}
+				}),
+				afterClose: function() {
+					dialog.destroy();
+				}
+			});
+			dialog.open();
+		},
+		
+		onPerson: function() {
+			var dialog = new sap.m.Dialog({
+				title: "Sélectionner la victime",
+				type: "Standard",
+				content: [
+					new sap.m.Input({
+						id: "firstname",
+						placeholder: "Nom"
+					}),
+					new sap.m.Input({
+						id: "lastname",
+						placeholder: "Prénom"
+					}),
+					new sap.m.Input({
+						id: "company",
+						placeholder: "Société"
+					})
+				],
+				beginButton: new sap.m.Button({
+					text: "Valider",
+					icon: "sap-icon://accept",
+					type: "Accept",
+					press: function() {
+						//Close dialog
 						dialog.close();
 						//self.onValiderBase("Va");
 					}
