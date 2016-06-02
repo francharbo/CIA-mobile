@@ -1,7 +1,7 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns:com="sap.ui.commons" xmlns:coml="sap.ui.commons.layout" xmlns="sap.m" xmlns:core="sap.ui.core"
 	controllerName="fr.ar.cia.controller.Step">
-	<App  backgroundColor="white">
+	<App backgroundColor="white">
 		<Page enableScrolling="true" showFooter="false" showHeader="false">
 			<VBox width="100%">
 				<items>
@@ -65,7 +65,7 @@
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell colSpan="2">
 									<com:ComboBox items="{/Atelier}" id="atelierStep1" value="{injuries>atelier}">
-										<core:Items text="{text}"
+										<core:ListItem text="{text}"/>
 									</com:ComboBox>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
@@ -77,29 +77,20 @@
 									<core:Icon src="sap-icon://person-placeholder" size="2em" press="onPerson"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell colSpan="2">
-									<ComboBox id="__box1">
-										<items>
+									<com:ComboBox id="__box1">
+										<com:items>
 											<core:ListItem text="CDI" key="item1" id="__item6"/>
 											<core:ListItem text="CDD" key="item2" id="__item7"/>
 											<core:ListItem text="Stagiaire" key="item3" id="__item8"/>
-										</items>
-									</ComboBox>
+										</com:items>
+									</com:ComboBox>
 								</coml:MatrixLayoutCell>
 							</coml:MatrixLayoutRow>
 						</coml:MatrixLayout>
 						<Label text="Description opération/tâches" class="sapUiSmallMarginTop"/>
-<<<<<<< HEAD
 						<Input id="sujet" placeholder="Sujet" value="{injuries>phase}"/>
-						<TextArea id="desc" editable="true" width="100%" value="{injuries>description}"/>
-						<HBox alignItems="Center" justifyContent="Center">
-							<Button text="DOMMAGE" class="sapUiSmallMarginEnd"/>
-							<Button icon="sap-icon://action" text="Diffusion CIA" class="sapUiSmallMarginBegin"/>
-=======
-
-						<Input id="sujet" placeholder="Sujet" value="{Visites>phase}"/>
 						<Label text="Fait accidentel" class="sapUiSmallMarginTop"/>
 						<TextArea id="desc" editable="true" width="100%" value="{Visites>description}"/>
-
 						<HBox alignItems="Center" justifyContent="SpaceBetween">
 							<Button text="DOMMAGE" press="onStep2"/>
 							<Button icon="sap-icon://action" text="Diffusion CIA" class="sapUiSmallMarginBegin" press="onStep3"/>
@@ -109,7 +100,6 @@
 							<items>
 								<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
 							</items>
->>>>>>> branch 'master' of https://github.com/francharbo/CIA-mobile
 						</HBox>
 					</VBox>
 				</items>

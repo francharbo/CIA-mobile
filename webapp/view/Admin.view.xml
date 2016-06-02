@@ -4,10 +4,10 @@
 	<App backgroundColor="white">
 		<Page enableScrolling="true" showFooter="false" showHeader="false">
 			<VBox width="100%">
-				<HBox class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
+				<HBox id="header" class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
 					<items>
-						<Image src="resource/Image2.png" width="50%"/>
-						<Image src="resource/Image1.png" width="90%"/>
+						<Image id="phoneLogo" src="resource/Image2.png"/>
+						<Image id="textLogo" src="resource/Image1.png"/>
 					</items>
 				</HBox>
 				<FlexBox alignItems="Begin">
@@ -50,9 +50,9 @@
 						</table:Column>
 					</table:columns>
 				</table:Table>
-				<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+				<HBox id="footer" class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 					<items>
-						<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
+						<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
 					</items>
 				</HBox>
 			</VBox>

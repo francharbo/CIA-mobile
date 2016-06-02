@@ -95,6 +95,8 @@ sap.ui.define([
 					usrNumber: that.usr,
 					Id: that.visite
 				});
+			}else {
+				sap.ui.commons.MessageBox.alert("Veuillez commencer par l'étape 1");
 			}
 		}
 	});
