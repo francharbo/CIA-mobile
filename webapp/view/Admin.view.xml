@@ -1,0 +1,61 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:com="sap.ui.commons" xmlns:core="sap.ui.core" xmlns:coml="sap.ui.commons.layout" xmlns="sap.m" xmlns:table="sap.ui.table"
+	xmlns:cust="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="fr.ar.cia.controller.Step">
+	<App backgroundColor="white">
+		<Page enableScrolling="true" showFooter="false" showHeader="false">
+			<VBox width="100%">
+				<HBox class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
+					<items>
+						<Image src="resource/Image2.png" width="50%"/>
+						<Image src="resource/Image1.png" width="90%"/>
+					</items>
+				</HBox>
+				<FlexBox alignItems="Begin">
+					<Button width="100%" text="Go To Menu" press="goToMenu">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Button>
+					<Button width="100%" text="Export Excel" press="Export">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Button>
+				</FlexBox>
+				<table:Table id="table" rows="{/Visites}" visibleRowCount="8">
+					<table:columns>
+						<table:Column>
+							<Label text="site"/>
+							<table:template>
+								<Link text="{Site}" press="updateInjury" cust:Id="{Id}"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="Victime"/>
+							<table:template>
+								<Text text="{victime}"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="Gravité"/>
+							<table:template>
+								<Text text="{gravite}"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="Date"/>
+							<table:template>
+								<Text text="{Date}"/>
+							</table:template>
+						</table:Column>
+					</table:columns>
+				</table:Table>
+				<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+					<items>
+						<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
+					</items>
+				</HBox>
+			</VBox>
+		</Page>
+	</App>
+</mvc:View>

@@ -4,10 +4,10 @@
 		<Page enableScrolling="true" showFooter="false" showHeader="false">
 			<VBox width="100%">
 				<items>
-					<HBox class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
+					<HBox id="header" class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
 						<items>
-							<Image src="resource/Image2.png" width="50%"/>
-							<Image src="resource/Image1.png" width="90%"/>
+							<Image id="phoneLogo" src="resource/Image2.png" width="50%"/>
+							<Image id="textLogo" src="resource/Image1.png" width="90%"/>
 						</items>
 					</HBox>
 					<HBox alignItems="End" justifyContent="SpaceBetween">
@@ -80,13 +80,13 @@
 							</VBox>
 						</f:SimpleForm>
 						<HBox justifyContent="Center">
-							<Button text="Autre" icon="sap-icon://arobase" class="sapUiSmallMarginEnd blueIcon" press="onOtherButton"/>
+							<Button text="Autre(s)" icon="sap-icon://arobase" class="sapUiSmallMarginEnd blueIcon" press="onOtherButton"/>
 							<Button text="Envoyer" icon="sap-icon://email" type="Reject" class="sapUiSmallMarginBegin"/>
 						</HBox>
 					</VBox>
-					<HBox class="footerStyle" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+					<HBox id="footer" class="footerStyle" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 						<items>
-							<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
+							<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
 						</items>
 					</HBox>
 				</items>

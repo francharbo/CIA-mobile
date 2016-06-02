@@ -15,6 +15,10 @@ sap.ui.define([
 		createLoginModel: function() {
 			var path = jQuery.sap.getModulePath("fr.ar.cia");
 			return new JSONModel([path, "model/login.json"].join("/"));
+		},
+		createVisitesModel: function() {
+			var path = jQuery.sap.getModulePath("fr.ar.cia");
+			return new JSONModel([path, "model/Visites.json"].join("/"));
 		}
 
 	};

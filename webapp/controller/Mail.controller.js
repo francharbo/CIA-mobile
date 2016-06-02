@@ -12,18 +12,27 @@ sap.ui.define([
 			oRouter.getRoute("mail").attachPatternMatched(this._onObjectMatched, this);
 		},
 		_onObjectMatched: function(oEvent) {
-			that.infos = oEvent.getParameter("arguments").infos;
-			that.infos = JSON.parse(that.infos);
+			that.visite = oEvent.getParameter("arguments").Id;
+			that.usr = oEvent.getParameter("arguments").Id;
+			that.infos = that.getOwnerComponent().getModel("Visites").getProperty("/Visites/" + that.visite);
 			that.byId("site").setText(that.infos.Site);
-			that.byId("atelier").setText(that.infos.Atelier);
+			that.byId("atelier").setText(that.infos.atelier);
 			that.byId("victime").setText(that.infos.victime);
 			that.byId("phase").setText(that.infos.sujet);
-			that.byId("description").setText(that.infos.desc);
-			that.byId("Date").setText(that.infos.date);
-			
+			that.byId("description").setText(that.infos.description);
+			that.byId("Date").setText(that.infos.Date);
+			that.injuredParts = String.fromCharCode(13);
+			var cpt = 0;
+			for(var i in that.infos.PartiesBlessees){
+				if(that.infos.PartiesBlessees[i]){
+					that.injuredParts += Object.keys(that.infos.PartiesBlessees)[cpt] + String.fromCharCode(13);
+				}
+				cpt++;
+			}
+			that.byId("hurt").setValue(that.injuredParts);
 			//get user
 			this.getView().bindElement({
-				path: "/Data/" + that.infos.usr,
+				path: "/loginData/" + that.usr,
 				model: "login"
 			});
 		},
@@ -46,11 +55,13 @@ sap.ui.define([
 
 		},
 		sendMail: function() {
+			
 			this.text = "Site : " + that.byId("site").getText() + String.fromCharCode(13) +
 			"Atelier : " + that.byId("atelier").getText() + String.fromCharCode(13) +
 			"Victime : " + that.byId("victime").getText() +String.fromCharCode(13)+
 			"Phase : " + that.byId("phase").getText() + String.fromCharCode(13) +
-			"Description : " + that.byId("description").getText();
+			"Description : " + that.byId("description").getText() + String.fromCharCode(13) +
+			"Parties Blessées :" + that.byId("hurt").getValue();
 			if(sap.ui.Device.system.phone){
 					sap.m.URLHelper.triggerEmail(this.infos.dest, "Atelier Accident Travail", this.text);
 			}else{
