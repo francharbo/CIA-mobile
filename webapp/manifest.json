@@ -110,9 +110,9 @@
 					"target": "mail"
 				},
 				{
-					"pattern":"admin/{usrNumber}",
-					"name":"admin",
-					"target":"admin"
+					"pattern": "admin/{usrNumber}",
+					"name": "admin",
+					"target": "admin"
 				}
 			],
 			"targets": {
@@ -140,7 +140,7 @@
 					"viewName": "Mail",
 					"viewId": "mail"
 				},
-				"admin":{
+				"admin": {
 					"viewName": "Admin",
 					"viewId": "admin"
 				}

@@ -28,7 +28,7 @@ sap.ui.define([
 
 		onAfterRendering: function() {
 			if (this.getView().getViewName().indexOf("Step2") > -1) {
-
+				
 				var middleHeight = this.getView().byId("rowMiddle").$().height() + "px";
 				var bottomHeight = this.getView().byId("rowBottom").$().height() + "px";
 				this.getView().byId("Tete").setHeight(this.getView().byId("rowHead").$().height() + "px");

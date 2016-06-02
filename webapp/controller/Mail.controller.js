@@ -63,9 +63,9 @@ sap.ui.define([
 			"Description : " + that.byId("description").getText() + String.fromCharCode(13) +
 			"Parties Blessées :" + that.byId("hurt").getValue();
 			if(sap.ui.Device.system.phone){
-					sap.m.URLHelper.triggerEmail(this.infos.dest, "Atelier Accident Travail", this.text);
+					sap.m.URLHelper.triggerEmail(this.infos.destinataire, "Atelier Accident Travail", this.text);
 			}else{
-			    window.open(sap.m.URLHelper.normalizeEmail(this.infos.dest,"Atelier Accident Travail",this.text));
+			    window.open(sap.m.URLHelper.normalizeEmail(this.infos.destinataire, "Atelier Accident Travail", this.text));
 			}
 		}
 	});
