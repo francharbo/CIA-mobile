@@ -5,6 +5,7 @@ sap.ui.define([
 	var that;
 	return BaseController.extend("fr.ar.cia.controller.Step", {
 
+
 		onInit: function() {
 			that = this;
 			this.getView().setModel(this.getOwnerComponent().getModel("injuries"));
@@ -29,14 +30,10 @@ sap.ui.define([
 			avrilLogo.setHeight($(window).height()*footer.getHeight().substring(0, footerLength-1)/100+ "px");
 			
 			if (this.getView().getViewName().indexOf("Step2") > -1) {
-				var head = this.getView().byId("rowHead");
-				var middle = this.getView().byId("rowMiddle");
-				var bottom = this.getView().byId("rowBottom");
 				
-				var headHeight = $(window).height()*head.getHeight().substring(0, head.getHeight().length-1)/100+ "px";
-				var middleHeight = $(window).height()*middle.getHeight().substring(0, middle.getHeight().length-1)/100+ "px";
-				var bottomHeight = $(window).height()*bottom.getHeight().substring(0, bottom.getHeight().length-1)/100+ "px";
-				this.getView().byId("Tete").setHeight(headHeight);
+				var middleHeight = this.getView().byId("rowMiddle").$().height() + "px";
+				var bottomHeight = this.getView().byId("rowBottom").$().height() + "px";
+				this.getView().byId("Tete").setHeight(this.getView().byId("rowHead").$().height() + "px");
 				this.getView().byId("Bras").setHeight(middleHeight);
 				this.getView().byId("Torse").setHeight(middleHeight);
 				this.getView().byId("Main").setHeight(middleHeight);

@@ -6,8 +6,8 @@
 			<VBox width="100%">
 				<HBox id="header" class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
 					<items>
-						<Image id="phoneLogo" src="resource/Image2.png"/>
-						<Image id="textLogo" src="resource/Image1.png"/>
+						<Image src="resource/Image2.png" width="50%"/>
+						<Image src="resource/Image1.png" width="90%"/>
 					</items>
 				</HBox>
 				<FlexBox alignItems="Begin">
@@ -22,6 +22,7 @@
 						</layoutData>
 					</Button>
 				</FlexBox>
+
 				<table:Table id="table" rows="{/injuries}" visibleRowCount="8">
 					<table:columns>
 						<table:Column>
@@ -50,9 +51,9 @@
 						</table:Column>
 					</table:columns>
 				</table:Table>
-				<HBox id="footer" class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+				<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 					<items>
-						<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
+						<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
 					</items>
 				</HBox>
 			</VBox>

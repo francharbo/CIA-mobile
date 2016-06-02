@@ -5,10 +5,10 @@
 		<Page enableScrolling="true" showFooter="false" showHeader="false">
 			<VBox width="100%">
 				<items>
-					<HBox id="header" class="headerStyle" height="10%" alignItems="Center" justifyContent="SpaceBetween">
+					<HBox id="header" class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
 						<items>
-							<Image id="phoneLogo" src="resource/Image2.png"/>
-							<Image id="textLogo" src="resource/Image1.png"/>
+							<Image id="phoneLogo" src="resource/Image2.png" width="50%"/>
+							<Image id="textLogo" src="resource/Image1.png" width="90%"/>
 						</items>
 					</HBox>
 					<HBox alignItems="End" justifyContent="SpaceBetween">
@@ -31,8 +31,8 @@
 							</Button>
 						</items>
 					</HBox>
-					<coml:MatrixLayout>
-						<coml:MatrixLayoutRow id="rowHead" height="17%">
+					<coml:MatrixLayout height="200px">
+						<coml:MatrixLayoutRow id="rowHead" height="22%">
 							<coml:MatrixLayoutCell >
 								<com:ComboBox value="FACE" width="75%"></com:ComboBox>
 							</coml:MatrixLayoutCell>
@@ -67,9 +67,9 @@
 						<com:DropdownBox id="nature" placeholder="Nature du dommage"></com:DropdownBox>
 						<com:DropdownBox id="cause" placeholder="Cause"></com:DropdownBox>
 					</VBox>
-					<HBox id="footer" class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+					<HBox id="footer" class="footerStyle" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 						<items>
-							<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
+							<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
 						</items>
 					</HBox>
 				</items>

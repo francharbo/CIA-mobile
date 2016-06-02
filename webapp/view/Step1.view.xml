@@ -5,10 +5,10 @@
 		<Page enableScrolling="true" showFooter="false" showHeader="false">
 			<VBox width="100%">
 				<items>
-					<HBox id="header" class="headerStyle" height="10%" alignItems="Center" justifyContent="SpaceBetween">
+					<HBox id="header" class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
 						<items>
-							<Image id="phoneLogo" src="resource/Image2.png"/>
-							<Image id="textLogo" src="resource/Image1.png"/>
+							<Image id="phoneLogo" src="resource/Image2.png" width="50%"/>
+							<Image id="textLogo" src="resource/Image1.png" width="90%"/>
 						</items>
 					</HBox>
 					<HBox alignItems="End" justifyContent="SpaceBetween">
@@ -91,12 +91,19 @@
 						<Input id="sujet" placeholder="Sujet" value="{injuries>phase}"/>
 						<Label text="Fait accidentel" class="sapUiSmallMarginTop"/>
 						<TextArea id="desc" editable="true" width="100%" value="{Visites>description}"/>
+<<<<<<< master
 						<HBox alignItems="Center" justifyContent="SpaceBetween">
 							<Button text="DOMMAGE" press="onStep2"/>
 							<Button icon="sap-icon://action" text="Diffusion CIA" class="sapUiSmallMarginBegin" press="onStep3"/>
+=======
+
+						<HBox alignItems="Center" justifyContent="Center">
+							<Button text="DOMMAGE" class="sapUiSmallMarginEnd"/>
+							<Button icon="sap-icon://action" text="Diffusion CIA" class="sapUiSmallMarginBegin"/>
+>>>>>>> 6249bda Change design : TODO : bug image stickman, ComboBox, Footer, photo
 							<Button icon="sap-icon://camera"/>
 						</HBox>
-						<HBox id="footer" class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+						<HBox id="footer" class="footerStyle" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 							<items>
 								<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
 							</items>
