@@ -5,6 +5,7 @@ sap.ui.define([
 	var that;
 	return BaseController.extend("fr.ar.cia.controller.Step", {
 
+
 		onInit: function() {
 			that = this;
 			this.getView().setModel(this.getOwnerComponent().getModel("Visites"));
