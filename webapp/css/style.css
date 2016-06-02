@@ -11,6 +11,12 @@
  .footerStyle {
  	background-color: #8A2908;
  }
+ 
+ .footerLogo {
+ 	background-image: url("/webapp/resource/Avril_logo_pointjaune_RVB.png");
+ 	background-repeat: no-repeat;
+	background-size: 10%;
+ }
  .backgroundstick {
  	width:320px;
     height:302px;
@@ -23,3 +29,4 @@
  	margin-left: auto ;
 	margin-right: auto ;
  }
+ 

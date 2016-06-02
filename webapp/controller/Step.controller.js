@@ -14,6 +14,37 @@ sap.ui.define([
 			oRouter.getRoute("step2").attachPatternMatched(this._onObjectMatched, this);
 			oRouter.getRoute("step3").attachPatternMatched(this._onObjectMatched, this);
 		},
+		
+		onAfterRendering: function() {
+			var header = this.byId("header");
+			var headerLength = header.getHeight().length;
+			var textLogo = this.byId("textLogo");
+			textLogo.setHeight($(window).height()*header.getHeight().substring(0, headerLength-1)/100+ "px");
+			var phoneLogo = this.byId("phoneLogo");
+			phoneLogo.setHeight($(window).height()*header.getHeight().substring(0, headerLength-1)/100+ "px");
+			
+			var footer = this.byId("footer");
+			var footerLength = footer.getHeight().length;
+			var avrilLogo = this.byId("avrilLogo");
+			avrilLogo.setHeight($(window).height()*footer.getHeight().substring(0, footerLength-1)/100+ "px");
+			
+			if (this.getView().getViewName().indexOf("Step2") > -1) {
+				var head = this.getView().byId("rowHead");
+				var middle = this.getView().byId("rowMiddle");
+				var bottom = this.getView().byId("rowBottom");
+				
+				var headHeight = $(window).height()*head.getHeight().substring(0, head.getHeight().length-1)/100+ "px";
+				var middleHeight = $(window).height()*middle.getHeight().substring(0, middle.getHeight().length-1)/100+ "px";
+				var bottomHeight = $(window).height()*bottom.getHeight().substring(0, bottom.getHeight().length-1)/100+ "px";
+				this.getView().byId("Tete").setHeight(headHeight);
+				this.getView().byId("Bras").setHeight(middleHeight);
+				this.getView().byId("Torse").setHeight(middleHeight);
+				this.getView().byId("Main").setHeight(middleHeight);
+				this.getView().byId("Jambe").setHeight(bottomHeight);
+				this.getView().byId("Pied").setHeight(bottomHeight);
+			}
+		},
+		
 		_onObjectMatched: function(oEvent) {
 			that.usr = oEvent.getParameter("arguments").usrNumber;
 			that.visite = oEvent.getParameter("arguments").Id;
@@ -25,20 +56,7 @@ sap.ui.define([
 		_onObjectMatchedAdmin: function(oEvent) {
 			that.usrNumber = oEvent.getParameter("arguments").usrNumber;
 		},
-
-		onAfterRendering: function() {
-			if (this.getView().getViewName().indexOf("Step2") > -1) {
-				
-				var middleHeight = this.getView().byId("rowMiddle").$().height() + "px";
-				var bottomHeight = this.getView().byId("rowBottom").$().height() + "px";
-				this.getView().byId("Tete").setHeight(this.getView().byId("rowHead").$().height() + "px");
-				this.getView().byId("Bras").setHeight(middleHeight);
-				this.getView().byId("Torse").setHeight(middleHeight);
-				this.getView().byId("Main").setHeight(middleHeight);
-				this.getView().byId("Jambe").setHeight(bottomHeight);
-				this.getView().byId("Pied").setHeight(bottomHeight);
-			}
-		},
+		
 		/**
 		 * Navigates back in the browser history, if the entry was created by this app.
 		 * If not, it navigates to the Fiori Launchpad home page.
@@ -116,6 +134,48 @@ sap.ui.define([
 			});
 			dialog.open();
 		},
+		
+		onPerson: function() {
+			var dialog = new sap.m.Dialog({
+				title: "Sélectionner la victime",
+				type: "Standard",
+				content: [
+					new sap.m.Input({
+						id: "firstname",
+						placeholder: "Nom"
+					}),
+					new sap.m.Input({
+						id: "lastname",
+						placeholder: "Prénom"
+					}),
+					new sap.m.Input({
+						id: "company",
+						placeholder: "Société"
+					})
+				],
+				beginButton: new sap.m.Button({
+					text: "Valider",
+					icon: "sap-icon://accept",
+					type: "Accept",
+					press: function() {
+						//Close dialog
+						dialog.close();
+						//self.onValiderBase("Va");
+					}
+				}),
+				endButton: new sap.m.Button({
+					text: "Annuler",
+					press: function() {
+						dialog.close();
+					}
+				}),
+				afterClose: function() {
+					dialog.destroy();
+				}
+			});
+			dialog.open();
+		},
+		
 		goToMenu: function() {
 			this.getRouter().navTo("menu", {
 				usrNumber: that.usrNumber
