@@ -7,7 +7,7 @@ sap.ui.define([
 
 		onInit: function() {
 			that = this;
-			this.getView().setModel(this.getOwnerComponent().getModel("Visites"));
+			this.getView().setModel(this.getOwnerComponent().getModel("injuries"));
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("admin").attachPatternMatched(this._onObjectMatchedAdmin, this);
 			oRouter.getRoute("step1").attachPatternMatched(this._onObjectMatched, this);
@@ -18,8 +18,8 @@ sap.ui.define([
 			that.usr = oEvent.getParameter("arguments").usrNumber;
 			that.visite = oEvent.getParameter("arguments").Id;
 			this.getView().bindElement({
-				path: "/Visites/" + that.visite,
-				model: "Visites"
+				path: "/injuries/" + that.visite,
+				model: "injuries"
 			});
 		},
 		_onObjectMatchedAdmin: function(oEvent) {
@@ -94,7 +94,7 @@ sap.ui.define([
 					press: function() {
 						//Close dialog
 						var mail = sap.ui.getCore().byId("newEmail").getValue();
-						var infos = that.getOwnerComponent().getModel("Visites").getProperty("/Visites/" + that.visite);
+						var infos = that.getOwnerComponent().getModel("injuries").getProperty("/injuries/" + that.visite);
 						infos.destinataire = mail;
 						that.getRouter().navTo("mail", {
 							usrNumber: that.usr,
@@ -135,7 +135,7 @@ sap.ui.define([
 			// If JSONData is not an object then JSON.parse will parse the JSON
 			// string in an Object
 
-			var arrData = JSONData.Visites;
+			var arrData = JSONData.injuries;
 			var CSV = '';
 			// Set Report title in first row or line
 			CSV += ReportTitle + '\r\n\n';
@@ -189,7 +189,7 @@ sap.ui.define([
 		},
 		Export: function() {
 
-			var data = this.getOwnerComponent().getModel("Visites").getData();
+			var data = this.getOwnerComponent().getModel("injuries").getData();
 			this.JSONToCSVConvertor(data, "Report");
 
 		},

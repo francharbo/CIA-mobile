@@ -26,7 +26,7 @@ sap.ui.define([
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 			this.setModel(models.createLoginModel(),"login");
-			this.setModel(models.createVisitesModel(),"Visites");
+			this.setModel(models.createinjuriesModel(),"injuries");
 			
 			this.getRouter().initialize();
 		},

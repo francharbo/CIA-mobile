@@ -22,7 +22,7 @@
 						</layoutData>
 					</Button>
 				</FlexBox>
-				<table:Table id="table" rows="{/Visites}" visibleRowCount="8">
+				<table:Table id="table" rows="{/injuries}" visibleRowCount="8">
 					<table:columns>
 						<table:Column>
 							<Label text="site"/>

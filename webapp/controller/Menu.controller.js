@@ -30,12 +30,12 @@ sap.ui.define([
 			that.visite = parseInt(oEvent.getParameter("arguments").Id) - 1;
 			if (!isNaN(that.visite)) {
 				this.getView().bindElement({
-					path: "/Visites/" + that.visite,
-					model: "Visites"
+					path: "/injuries/" + that.visite,
+					model: "injuries"
 				});
 			} else {
 				var login = that.getOwnerComponent().getModel("login").getProperty("/loginData/" + that.usr);
-				var model = that.getOwnerComponent().getModel("Visites").getProperty("/Visites");
+				var model = that.getOwnerComponent().getModel("injuries").getProperty("/injuries");
 				that.visite = model.length;
 				model.push({
 					"Id": that.visite,
@@ -57,10 +57,10 @@ sap.ui.define([
 						"pied": false
 					}
 				});
-				this.getOwnerComponent().getModel("Visites").setProperty("/Visites", model);
+				this.getOwnerComponent().getModel("injuries").setProperty("/injuries", model);
 				this.getView().bindElement({
-					path: "/Visites/" + that.visite,
-					model: "Visites"
+					path: "/injuries/" + that.visite,
+					model: "injuries"
 				});
 			}
 			this.getView().bindElement({
@@ -77,7 +77,7 @@ sap.ui.define([
 		},
 		onStep2: function() {
 			var oModel = that.getOwnerComponent().getModel("login").getProperty("/loginData/" + that.usr);
-			var oModelvisite = that.getOwnerComponent().getModel("Visites").getProperty("/Visites/" + that.visite);
+			var oModelvisite = that.getOwnerComponent().getModel("injuries").getProperty("/injuries/" + that.visite);
 			if (this.getView().getViewName().indexOf("Step1") > -1 || (oModel.admin && oModelvisite.gravite !== "")) {
 				this.getRouter().navTo("step2", {
 					usrNumber: that.usr,
@@ -89,7 +89,7 @@ sap.ui.define([
 		},
 		onStep3: function() {
 			var oModel = that.getOwnerComponent().getModel("login").getProperty("/loginData/" + that.usr);
-			var oModelvisite = that.getOwnerComponent().getModel("Visites").getProperty("/Visites/" + that.visite);
+			var oModelvisite = that.getOwnerComponent().getModel("injuries").getProperty("/injuries/" + that.visite);
 			if (this.getView().getViewName().indexOf("Step2") > -1 || (oModel.admin && oModelvisite.gravite !== "")) {
 				this.getRouter().navTo("step3", {
 					usrNumber: that.usr,

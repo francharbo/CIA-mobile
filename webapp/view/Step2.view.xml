@@ -37,27 +37,27 @@
 								<com:ComboBox value="FACE" width="75%"></com:ComboBox>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell hAlign="Center">
-								<Image id="Tete" src="resource/Tete.png" press="InjurySelect" cust:desc="Tete" cust:status="{Visites>PartiesBlessees/Tete}"/>
+								<Image id="Tete" src="resource/Tete.png" press="InjurySelect" cust:desc="Tete" cust:status="{injuries>PartiesBlessees/Tete}"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
 						</coml:MatrixLayoutRow>
 						<coml:MatrixLayoutRow id="rowMiddle" height="22%">
 							<coml:MatrixLayoutCell hAlign="End">
-								<Image id="Bras" src="resource/Bras.png" press="InjurySelect" cust:desc="Bras" cust:status="{Visites>PartiesBlessees/Bras}"/>
+								<Image id="Bras" src="resource/Bras.png" press="InjurySelect" cust:desc="Bras" cust:status="{injuries>PartiesBlessees/Bras}"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell hAlign="Center">
-								<Image id="Torse" src="resource/Torse.png" press="InjurySelect" cust:desc="Torse" cust:status="{Visites>PartiesBlessees/Torse}"/>
+								<Image id="Torse" src="resource/Torse.png" press="InjurySelect" cust:desc="Torse" cust:status="{injuries>PartiesBlessees/Torse}"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell halign="Begin">
-								<Image id="Main" src="resource/Main.png" press="InjurySelect" cust:desc="Main" cust:status="{Visites>PartiesBlessees/Main}"/>
+								<Image id="Main" src="resource/Main.png" press="InjurySelect" cust:desc="Main" cust:status="{injuries>PartiesBlessees/Main}"/>
 							</coml:MatrixLayoutCell>
 						</coml:MatrixLayoutRow>
 						<coml:MatrixLayoutRow id="rowBottom" height="22%">
 							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell hAlign="Center" vAlign="Middle">
 								<FlexBox alignItems="Center" justifyContent="Center">
-									<Image id="Jambe" src="resource/Jambe.png" press="InjurySelect" cust:desc="Jambe" cust:status="{Visites>PartiesBlessees/Jambe}"/>
-									<Image id="Pied" src="resource/Pied.png" press="InjurySelect" cust:desc="Pied" cust:status="{Visites>PartiesBlessees/Pied}"/>
+									<Image id="Jambe" src="resource/Jambe.png" press="InjurySelect" cust:desc="Jambe" cust:status="{injuries>PartiesBlessees/Jambe}"/>
+									<Image id="Pied" src="resource/Pied.png" press="InjurySelect" cust:desc="Pied" cust:status="{injuries>PartiesBlessees/Pied}"/>
 								</FlexBox>
 							</coml:MatrixLayoutCell>
 						</coml:MatrixLayoutRow>

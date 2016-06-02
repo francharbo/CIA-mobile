@@ -16,9 +16,9 @@ sap.ui.define([
 			var path = jQuery.sap.getModulePath("fr.ar.cia");
 			return new JSONModel([path, "model/login.json"].join("/"));
 		},
-		createVisitesModel: function() {
+		createinjuriesModel: function() {
 			var path = jQuery.sap.getModulePath("fr.ar.cia");
-			return new JSONModel([path, "model/Visites.json"].join("/"));
+			return new JSONModel([path, "model/injuries.json"].join("/"));
 		}
 
 	};

@@ -14,7 +14,7 @@ sap.ui.define([
 		_onObjectMatched: function(oEvent) {
 			that.visite = oEvent.getParameter("arguments").Id;
 			that.usr = oEvent.getParameter("arguments").Id;
-			that.infos = that.getOwnerComponent().getModel("Visites").getProperty("/Visites/" + that.visite);
+			that.infos = that.getOwnerComponent().getModel("injuries").getProperty("/injuries/" + that.visite);
 			that.byId("site").setText(that.infos.Site);
 			that.byId("atelier").setText(that.infos.atelier);
 			that.byId("victime").setText(that.infos.victime);

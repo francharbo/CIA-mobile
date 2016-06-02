@@ -1,0 +1,119 @@
+{
+	"Atelier": [{
+		"text": "Extraction"
+	}, {
+		"text": "Trituration"
+	}, {
+		"text": "Raffinage"
+	}, {
+		"text": "Chargement huile "
+	}, {
+		"text": "Estérification"
+	}, {
+		"text": "Calibreuse MOBA "
+	}, {
+		"text": "Verse sac"
+	}],
+
+	"Domaine": [{
+		"CODE": "TV",
+		"DOMAINE": "Transformation Végétal"
+	}, {
+		"CODE": "HEC",
+		"DOMAINE": "Huile et Condiment"
+	}, {
+		"CODE": "OLEON",
+		"DOMAINE": "Oleochimie"
+	}, {
+		"CODE": " NA ",
+		"DOMAINE": "Nutrition Animale"
+	}, {
+		"CODE": " BSN",
+		"DOMAINE": "Biosécurité et Spécialités nutritionnelles"
+	}, {
+		"CODE": "TA",
+		"DOMAINE": "Transformation Animale"
+	}, {
+		"CODE": "AD",
+		"DOMAINE": "Avril Développement"
+	}],
+
+	"Gravite": [{
+		"text": "Soin interne"
+	}, {
+		"text": "Soin externe"
+	}, {
+		"text": "Arrêt de travail"
+	}, {
+		"text": "Invalidante ou +"
+
+	}],
+
+	"NatureDommage": [{
+		"text": "Douleur"
+	}, {
+		"text": "Hematome"
+	}, {
+		"text": "Plaie"
+	}, {
+		"text": "Coupure"
+	}, {
+		"text": "Pincement"
+	}, {
+		"text": "Foulure"
+	}, {
+		"text": "Irritation"
+	}, {
+		"text": "Brûlure"
+	}, {
+		"text": "Autre"
+	}],
+
+	"Cause": [{
+		"text": "Circulation"
+	}, {
+		"text": "Manutention"
+	}, {
+		"text": "Chimique"
+	}, {
+		"text": "Machine outil"
+	}, {
+		"text": "Chute"
+	}],
+
+	"Societe": [{
+		"text": "ASO NUTRITION"
+	}, {
+		"text": "SANDERS"
+	}, {
+		"text": "Mixscience"
+	}, {
+		"text": "4 Vallées"
+	}, {
+		"text": "ABERA"
+	}, {
+		"text": "RVE"
+	}, {
+		"text": "Volailles de Blancafort"
+	}, {
+		"text": "Farmor"
+	}, {
+		"text": "VDK"
+	}, {
+		"text": "Robichon"
+	}, {
+		"text": "OVOTEAM"
+	}, {
+		"text": "Avril PA"
+	}, {
+		"text": "Boscher Volailles"
+	}, {
+		"text": "Matine Brugnens"
+	}, {
+		"text": "Agro Evolution "
+	}, {
+		"text": "Amilly accouvage"
+	}]
+	
+
+}
