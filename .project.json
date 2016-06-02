@@ -7,7 +7,7 @@
     "targetFolder": "dist",
     "sourceFolder": "webapp",
     "buildRequired": true,
-    "lastBuildDateTime": "Fri, 27 May 2016 09:30:40 GMT"
+    "lastBuildDateTime": "Wed, 01 Jun 2016 15:42:51 GMT"
   },
   "generation": [
     {
@@ -50,6 +50,6 @@
   "hcpdeploy": {
     "account": "a33c3886c",
     "name": "cia",
-    "lastVersionWeTriedToDeploy": "1.0.0"
+    "lastVersionWeTriedToDeploy": "1.0.1"
   }
 }
