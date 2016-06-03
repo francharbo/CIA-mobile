@@ -1,0 +1,23 @@
+<core:FragmentDefinition 
+	xmlns="sap.m">
+	<Dialog modal ="true" title="Input" showHeader="true" contentWidth="50%" class="sapUiPopupWithPadding" placement="Bottom">
+		<beginButton>
+			<Button text="Fermer" press="closeDialog" />
+		</beginButton>
+		<content>
+
+				<Label text="Tête"/>
+				<CheckBox id="tete"/>
+					
+			    <Label text="Oeil Droit"/>
+			    <CheckBox id="oeildroit"/>
+			    	
+		    	<Label text="Oeil Gauche"/>
+	    		<CheckBox id="oeilgauche"/>
+
+		</content>
+		<endButton>
+			<Button text="Valider" press="Validation"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

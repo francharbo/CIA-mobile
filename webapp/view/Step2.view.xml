@@ -3,7 +3,7 @@
 	xmlns:cust="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="fr.ar.cia.controller.Step">
 	<App backgroundColor="white">
 		<Page enableScrolling="true" showFooter="false" showHeader="false">
-			<VBox width="100%" >
+			<VBox width="100%">
 				<items>
 					<HBox id="header" class="headerStyle" height="10%" alignItems="Center" justifyContent="SpaceBetween">
 						<items>
@@ -32,7 +32,7 @@
 						</items>
 					</HBox>
 					<coml:MatrixLayout>
-						<coml:MatrixLayoutRow id="rowHead" height="17%">
+						<coml:MatrixLayoutRow id="rowHead" height="12%">
 							<coml:MatrixLayoutCell >
 								<com:ComboBox value="FACE" width="75%">
 									<core:ListItem text="DOS"/>
@@ -44,53 +44,66 @@
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
 						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow id="rowMiddle" height="17%">
+						<coml:MatrixLayoutRow id="rowMiddle" height="12%">
 							<coml:MatrixLayoutCell hAlign="End">
-								<Image id="Bras"  press="InjurySelect" cust:desc="Bras" cust:status="{injuries>PartiesBlessees/Bras}"/>
+								<Image id="BrasGauche" press="InjurySelect" cust:desc="BrasGauche" cust:status="{injuries>PartiesBlessees/BrasGauche}"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell hAlign="Center">
-								<Image id="Torse"  press="InjurySelect" cust:desc="Torse" cust:status="{injuries>PartiesBlessees/Torse}"/>
+								<Image id="Torse" press="InjurySelect" cust:desc="Torse" cust:status="{injuries>PartiesBlessees/Torse}"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell halign="Begin">
-								<Image id="Main" press="InjurySelect" cust:desc="Main" cust:status="{injuries>PartiesBlessees/Main}"/>
+								<Image id="BrasDroit" press="InjurySelect" cust:desc="BrasDroit" cust:status="{injuries>PartiesBlessees/BrasDroit}"/>
 							</coml:MatrixLayoutCell>
 						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow id="rowBottom" height="17%">
+						<coml:MatrixLayoutRow id="rowMiddleUnder" height="8%">
+							<coml:MatrixLayoutCell hAlign="End">
+								<Image id="MainGauche" press="InjurySelect" cust:desc="MainGauche" cust:status="{injuries>PartiesBlessees/MainGauche}"/>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell hAlign="Center">
+								<Image id="Ventre" press="InjurySelect" cust:desc="Ventre" cust:status="{injuries>PartiesBlessees/Ventre}"/>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell halign="Begin">
+								<Image id="MainDroite" press="InjurySelect" cust:desc="MainDroite" cust:status="{injuries>PartiesBlessees/MainDroite}"/>
+							</coml:MatrixLayoutCell>
+						</coml:MatrixLayoutRow>
+						<coml:MatrixLayoutRow id="rowBottom" height="12%">
 							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
-							<coml:MatrixLayoutCell hAlign="Center" vAlign="Middle">
-								<FlexBox alignItems="Center" justifyContent="Center">
-									<Image id="Jambe"  press="InjurySelect" cust:desc="Jambe" cust:status="{injuries>PartiesBlessees/Jambe}">
-										<layoutData>
-											<FlexItemData growFactor="3"/>
-										</layoutData>
-									</Image>
-									<Image id="Pied" press="InjurySelect" cust:desc="Pied" cust:status="{injuries>PartiesBlessees/Pied}">
-										<layoutData>
-											<FlexItemData growFactor="1"/>
-										</layoutData>
-									</Image>
+							<coml:MatrixLayoutCell hAlign="Center">
+								<FlexBox alignItems="Center" justifyContent="SpaceBetween">
+									<Image id="JambeGauche" press="InjurySelect" cust:desc="JambeGauche" cust:status="{injuries>PartiesBlessees/JambeGauche}"></Image>
+									<Image id="JambeDroite" press="InjurySelect" cust:desc="JambeDroite" cust:status="{injuries>PartiesBlessees/JambeDroite}"></Image>
 								</FlexBox>
 							</coml:MatrixLayoutCell>
 						</coml:MatrixLayoutRow>
-					</coml:MatrixLayout >
-					<VBox justifyContent="Center" alignItems="Center">
-						<com:DropdownBox items="{/Gravite}" id="gravite" placeholder="Gravité" value="{injuries>gravite}"> 
-							<core:ListItem text="{text}"/>
-						</com:DropdownBox>
-						<com:DropdownBox id="nature" items="{/NatureDommage}" placeholder="Nature du dommage" value="{injuries>natureDommage}">
-							<core:ListItem text="{text}"/>
-						</com:DropdownBox>
-						<com:DropdownBox id="cause" items="{/Cause}" placeholder="Cause" value="{injuries>Cause}">
-							<core:ListItem text="{text}"/>
-						</com:DropdownBox>
-					</VBox>
-					<HBox id="footer" class="footerStyle" height="10%" width="100%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
-						<items>
-							<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
-						</items>
-					</HBox>
-				</items>
-			</VBox>
-		</Page>
-	</App>
+						<coml:MatrixLayoutRow id="rowBottomFoot" height="6%">
+							<coml:MatrixLayoutCell hAlign="End">
+								<Image id="PiedGauche" press="InjurySelect" cust:desc="PiedGauche" cust:status="{injuries>PartiesBlessees/PiedGauche}"></Image>
+							</coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
+							<coml:MatrixLayoutCell hAlign="Begin">
+								<Image id="PiedDroit" press="InjurySelect" cust:desc="PiedDroit" cust:status="{injuries>PartiesBlessees/PiedDroit}"></Image>
+						</coml:MatrixLayoutCell>
+					</coml:MatrixLayoutRow>
+				</coml:MatrixLayout >
+				<VBox justifyContent="Center" alignItems="Center">
+					<com:DropdownBox items="{/Gravite}" id="gravite" placeholder="Gravité" value="{injuries>gravite}">
+						<core:ListItem text="{text}"/>
+					</com:DropdownBox>
+					<com:DropdownBox id="nature" items="{/NatureDommage}" placeholder="Nature du dommage" value="{injuries>natureDommage}">
+						<core:ListItem text="{text}"/>
+					</com:DropdownBox>
+					<com:DropdownBox id="cause" items="{/Cause}" placeholder="Cause" value="{injuries>Cause}">
+						<core:ListItem text="{text}"/>
+					</com:DropdownBox>
+				</VBox>
+				<HBox id="footer" class="footerStyle" height="10%" width="100%" alignItems="Center" justifyContent="End" displayInline="false"
+					fitContainer="false">
+					<items>
+						<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
+					</items>
+				</HBox>
+			</items>
+		</VBox>
+	</Page>
+</App>
 </mvc:View>

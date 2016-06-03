@@ -62,11 +62,13 @@ sap.ui.define([
 			"Phase : " + that.byId("phase").getText() + String.fromCharCode(13) +
 			"Description : " + that.byId("description").getText() + String.fromCharCode(13) +
 			"Parties Blessées :" + that.byId("hurt").getValue();
+			sap.m.MessageToast.show("CIA Envoyée");
 			if(sap.ui.Device.system.phone){
 					sap.m.URLHelper.triggerEmail(this.infos.destinataire, "Atelier Accident Travail", this.text);
 			}else{
 			    window.open(sap.m.URLHelper.normalizeEmail(this.infos.destinataire, "Atelier Accident Travail", this.text));
 			}
+			
 		}
 	});
 });

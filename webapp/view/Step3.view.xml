@@ -81,7 +81,7 @@
 						</f:SimpleForm>
 						<HBox justifyContent="Center">
 							<Button text="Autre(s)" icon="sap-icon://arobase" type="Emphasized" class="sapUiSmallMarginEnd" press="onOtherButton"/>
-							<Button text="Envoyer" icon="sap-icon://email" type="Reject" class="sapUiSmallMarginBegin"/>
+							<Button text="Envoyer" icon="sap-icon://email" type="Reject" class="sapUiSmallMarginBegin" press="sendSMS"/>
 						</HBox>
 					</VBox>
 					<HBox id="footer" class="footerStyle" height="10%" width="100%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">

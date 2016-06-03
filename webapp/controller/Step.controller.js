@@ -31,37 +31,73 @@ sap.ui.define([
 			if (this.getView().getViewName().indexOf("Step2") > -1) {
 				var head = this.getView().byId("rowHead");
 				var middle = this.getView().byId("rowMiddle");
+				var middleunder = this.getView().byId("rowMiddleUnder");
 				var bottom = this.getView().byId("rowBottom");
+				var bottomfoot = this.getView().byId("rowBottomFoot");
 
 				var headHeight = $(window).height() * head.getHeight().substring(0, head.getHeight().length - 1) / 100 + "px";
 				var middleHeight = $(window).height() * middle.getHeight().substring(0, middle.getHeight().length - 1) / 100 + "px";
+				var middleunderHeight = $(window).height() * middleunder.getHeight().substring(0, middleunder.getHeight().length - 1) / 100 + "px";
 				var bottomHeight = $(window).height() * bottom.getHeight().substring(0, bottom.getHeight().length - 1) / 100 + "px";
+				var bottomfootHeight = $(window).height() * bottomfoot.getHeight().substring(0, bottomfoot.getHeight().length - 1) / 100 + "px";
 
 				this.getView().byId("Tete").setHeight(headHeight);
 				this.renderHurtStickMan("Tete");
 
-				this.getView().byId("Bras").setHeight(middleHeight);
-				this.renderHurtStickMan("Bras");
+				this.getView().byId("BrasGauche").setHeight(middleHeight);
+				this.renderHurtStickMan("BrasGauche");
+
+				this.getView().byId("BrasDroit").setHeight(middleHeight);
+				this.renderHurtStickMan("BrasDroit");
 
 				this.getView().byId("Torse").setHeight(middleHeight);
 				this.renderHurtStickMan("Torse");
 
-				this.getView().byId("Main").setHeight(middleHeight);
-				this.renderHurtStickMan("Main");
+				this.getView().byId("Ventre").setHeight(middleunderHeight);
+				this.renderHurtStickMan("Ventre");
 
-				this.getView().byId("Jambe").setHeight(bottomHeight);
-				this.renderHurtStickMan("Jambe");
+				this.getView().byId("MainGauche").setHeight(middleunderHeight);
+				this.renderHurtStickMan("MainGauche");
 
-				this.getView().byId("Pied").setHeight(bottomHeight);
-				this.renderHurtStickMan("Pied");
+				this.getView().byId("MainDroite").setHeight(middleunderHeight);
+				this.renderHurtStickMan("MainDroite");
+
+				this.getView().byId("JambeGauche").setHeight(bottomHeight);
+				this.renderHurtStickMan("JambeGauche");
+
+				this.getView().byId("JambeDroite").setHeight(bottomHeight);
+				this.renderHurtStickMan("JambeDroite");
+
+				this.getView().byId("PiedGauche").setHeight(bottomfootHeight);
+				this.renderHurtStickMan("PiedGauche");
+
+				this.getView().byId("PiedDroit").setHeight(bottomfootHeight);
+				this.renderHurtStickMan("PiedDroit");
 			}
 		},
 		renderHurtStickMan: function(bodypart) {
-			if (this.getView().byId(bodypart).data("status")) {
-				this.getView().byId(bodypart).setSrc("resource/" + bodypart + "Select.png");
+			var part;
+			if (bodypart.indexOf("Jambe") === -1) {
+				if (bodypart.indexOf("Gauche") > -1) {
+					part = bodypart.replace("Gauche", "");
+				} else if (bodypart.indexOf("Droit") > -1) {
+					if (bodypart.indexOf("Droite") > -1) {
+						part = bodypart.replace("Droite", "");
+					} else {
+						part = bodypart.replace("Droit", "");
+					}
+				} else {
+					part = bodypart;
+				}
 			} else {
-				this.getView().byId(bodypart).setSrc("resource/" + bodypart + ".png");
+				part = bodypart;
 			}
+			if (this.getView().byId(bodypart).data("status")) {
+				this.getView().byId(bodypart).setSrc("resource/" + part + "Select.png");
+			} else {
+				this.getView().byId(bodypart).setSrc("resource/" + part + ".png");
+			}
+
 		},
 
 		_onObjectMatched: function(oEvent) {
@@ -275,6 +311,7 @@ sap.ui.define([
 		},
 		InjurySelect: function(oEvent) {
 			var part = oEvent.getSource().data("desc");
+			var id = part;
 			var status = oEvent.getSource().data("status");
 			var select = ".png";
 			if (status === false) {
@@ -283,22 +320,50 @@ sap.ui.define([
 			} else {
 				oEvent.getSource().data("status", false);
 			}
-			this.getView().byId(part).setSrc("resource/" + part + select);
+			if (part.indexOf("Jambe") === -1) {
+				if (part.indexOf("Gauche") > -1) {
+					part = part.replace("Gauche", "");
+				}
+				if (part.indexOf("Droit") > -1) {
+					if (part.indexOf("Droite") > -1) {
+						part = part.replace("Droite", "");
+					} else {
+						part = part.replace("Droit", "");
+					}
+				}
+			}
+			this.getView().byId(id).setSrc("resource/" + part + select);
 
 		},
 		picture: function() {
-			navigator.camera.getPicture(onSuccess, onFail, {
-				quality: 50,
-				destinationType: Camera.DestinationType.FILE_URI
-			});
+			document.addEventListener("deviceready", onDeviceReady, false);
 
-			function onSuccess(imageURI) {
-				var image = document.getElementById('myImage');
-				image.src = imageURI;
-			}
+			function onDeviceReady() {
+				var options = {
+					// Some common settings are 20, 50, and 100
+					quality: 50,
+					destinationType: Camera.DestinationType.FILE_URI,
+					// In this app, dynamically set the picture source, Camera or photo gallery
+					sourceType: srcType,
+					encodingType: Camera.EncodingType.JPEG,
+					mediaType: Camera.MediaType.PICTURE,
+					allowEdit: true,
+					correctOrientation: true //Corrects Android orientation quirks
+				}
 
-			function onFail(message) {
-				alert('Failed because: ' + message);
+				navigator.camera.getPicture(onSuccess, onFail, {
+					quality: 50,
+					destinationType: Camera.DestinationType.FILE_URI
+				}, options);
+
+				function onSuccess(imageURI) {
+					var image = document.getElementById('myImage');
+					image.src = imageURI;
+				}
+
+				function onFail(message) {
+					alert('Failed because: ' + message);
+				}
 			}
 		}
 	});

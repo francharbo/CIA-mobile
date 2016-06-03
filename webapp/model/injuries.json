@@ -14,11 +14,16 @@
 		"natureDommage": "Douleur",
 		"PartiesBlessees": {
 			"Tete": true,
-			"Epaule": false,
+			"OeilGauche": false,
+			"OeilDroit": false,
+			"Ventre": false,
 			"Torse": false,
-			"Main": true,
-			"Jambes": false,
-			"Pied": false
+			"MainGauche": true,
+			"MainDroite": false,
+			"JambeGauche": false,
+			"JambeDroite": false,
+			"PiedGauche": false,
+			"PiedDroit": false
 		}
 	}, {
 		"Id": "2",
@@ -34,12 +39,17 @@
 		"Cause": "Circulation",
 		"natureDommage": "Douleur",
 		"PartiesBlessees": {
-			"Tete": false,
-			"Epaule": false,
+			"Tete": true,
+			"OeilGauche": false,
+			"OeilDroit": false,
+			"Ventre": false,
 			"Torse": false,
-			"Main": false,
-			"Jambes": false,
-			"Pied": true
+			"MainGauche": true,
+			"MainDroite": false,
+			"JambeGauche": false,
+			"JambeDroite": false,
+			"PiedGauche": false,
+			"PiedDroit": false
 		}
 	}, {
 		"Id": "3",
@@ -55,12 +65,17 @@
 		"Cause": "Circulation",
 		"natureDommage": "Douleur",
 		"PartiesBlessees": {
-			"Tete": false,
-			"Epaule": false,
+			"Tete": true,
+			"OeilGauche": false,
+			"OeilDroit": false,
+			"Ventre": false,
 			"Torse": false,
-			"Main": true,
-			"Jambes": false,
-			"pied": false
+			"MainGauche": true,
+			"MainDroite": false,
+			"JambeGauche": false,
+			"JambeDroite": false,
+			"PiedGauche": false,
+			"PiedDroit": false
 		}
 	}, {
 		"Id": "4",
@@ -76,12 +91,17 @@
 		"Cause": "Circulation",
 		"natureDommage": "Douleur",
 		"PartiesBlessees": {
-			"Tete": false,
-			"Epaule": false,
+			"Tete": true,
+			"OeilGauche": false,
+			"OeilDroit": false,
+			"Ventre": false,
 			"Torse": false,
-			"Main": false,
-			"Jambes": false,
-			"Pied": true
+			"MainGauche": true,
+			"MainDroite": false,
+			"JambeGauche": false,
+			"JambeDroite": false,
+			"PiedGauche": false,
+			"PiedDroit": false
 		}
 	}]
 }
