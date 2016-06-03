@@ -7,6 +7,7 @@ sap.ui.define([
 
 		onInit: function() {
 			that = this;
+
 			this.getView().setModel(this.getOwnerComponent().getModel("injuries"));
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("admin").attachPatternMatched(this._onObjectMatchedAdmin, this);
@@ -314,6 +315,13 @@ sap.ui.define([
 			var id = part;
 			var status = oEvent.getSource().data("status");
 			var select = ".png";
+			if (part === "Tete") {
+				if (!that.popupHead) {
+					that.popupHead = sap.ui.xmlfragment("fr.ar.cia.view.fragment.dialogTete", that);
+					that.getView().addDependent(that.popupHead);
+				}
+				that.popupHead.open();
+			}
 			if (status === false) {
 				select = "Select.png";
 				oEvent.getSource().data("status", true);
@@ -344,7 +352,6 @@ sap.ui.define([
 					quality: 50,
 					destinationType: Camera.DestinationType.FILE_URI,
 					// In this app, dynamically set the picture source, Camera or photo gallery
-					sourceType: srcType,
 					encodingType: Camera.EncodingType.JPEG,
 					mediaType: Camera.MediaType.PICTURE,
 					allowEdit: true,
@@ -365,6 +372,33 @@ sap.ui.define([
 					alert('Failed because: ' + message);
 				}
 			}
+		},
+		closeDialog:function(oEvent){
+			oEvent.getSource().getParent().close();
+		},
+		Validation:function(oEvent){
+			var tete = sap.ui.getCore().byId("teteCheck").getSelected();
+			var oeildroit = sap.ui.getCore().byId("oeildroitCheck").getSelected();
+			var oeilgauche = sap.ui.getCore().byId("oeilgaucheCheck").getSelected();
+			
+			if(tete && oeildroit && oeilgauche){
+				that.getView().byId("Tete").setSrc("resource/TeteBothEyeSelect.png");
+			}else if(tete && oeildroit){
+				that.getView().byId("Tete").setSrc("resource/TeteEyeRightSelect.png");
+			}else if(tete && oeilgauche){
+				that.getView().byId("Tete").setSrc("resource/TeteEyeLeftSelect.png");
+			}else if(tete){
+				that.getView().byId("Tete").setSrc("resource/TeteSelect.png");
+			}else if(oeildroit && oeilgauche){
+				that.getView().byId("Tete").setSrc("resource/TeteSelectBothEye.png");
+			}else if(oeildroit){
+				that.getView().byId("Tete").setSrc("resource/TeteSelectEyeRight.png");
+			}else if(oeilgauche){
+				that.getView().byId("Tete").setSrc("resource/TeteSelectEyeLeft.png");
+			}else{
+				that.getView().byId("Tete").setSrc("resource/Tete.png");
+			}
+			oEvent.getSource().getParent().close();
 		}
 	});
 

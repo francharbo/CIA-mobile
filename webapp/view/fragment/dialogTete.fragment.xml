@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:coml="sap.ui.commons.layout">
+	<Dialog modal="true" title="Input" showHeader="true" contentWidth="50%" class="sapUiPopupWithPadding" placement="Bottom">
+		<beginButton>
+			<Button text="Fermer" press="closeDialog"/>
+		</beginButton>
+		<content>
+			<coml:MatrixLayout>
+				<coml:MatrixLayoutRow>
+					<coml:MatrixLayoutCell>
+						<Label text="Tête"/>
+					</coml:MatrixLayoutCell>
+					<coml:MatrixLayoutCell>
+						<CheckBox id="teteCheck"/>
+					</coml:MatrixLayoutCell>
+				</coml:MatrixLayoutRow>
+				<coml:MatrixLayoutRow>
+					<coml:MatrixLayoutCell>
+						<Label text="Oeil Droit"/>
+					</coml:MatrixLayoutCell>
+					<coml:MatrixLayoutCell>
+						<CheckBox id="oeildroitCheck"/>
+					</coml:MatrixLayoutCell>
+				</coml:MatrixLayoutRow>
+				<coml:MatrixLayoutRow>
+					<coml:MatrixLayoutCell>
+						<Label text="Oeil Gauche"/>
+					</coml:MatrixLayoutCell>
+					<coml:MatrixLayoutCell>
+						<CheckBox id="oeilgaucheCheck"/>
+					</coml:MatrixLayoutCell>
+				</coml:MatrixLayoutRow>
+			</coml:MatrixLayout>
+		</content>
+		<endButton>
+			<Button text="Valider" press="Validation"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
