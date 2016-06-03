@@ -1,42 +1,4 @@
 {
-	"Atelier": [{
-		"text": "Extraction"
-	}, {
-		"text": "Trituration"
-	}, {
-		"text": "Raffinage"
-	}, {
-		"text": "Chargement huile "
-	}, {
-		"text": "Estérification"
-	}, {
-		"text": "Calibreuse MOBA "
-	}, {
-		"text": "Verse sac"
-	}],
-
-	"Domaine": [{
-		"CODE": "TV",
-		"DOMAINE": "Transformation Végétal"
-	}, {
-		"CODE": "HEC",
-		"DOMAINE": "Huile et Condiment"
-	}, {
-		"CODE": "OLEON",
-		"DOMAINE": "Oleochimie"
-	}, {
-		"CODE": " NA ",
-		"DOMAINE": "Nutrition Animale"
-	}, {
-		"CODE": " BSN",
-		"DOMAINE": "Biosécurité et Spécialités nutritionnelles"
-	}, {
-		"CODE": "TA",
-		"DOMAINE": "Transformation Animale"
-	}, {
-		"CODE": "AD",
-		"DOMAINE": "Avril Développement"
-	}],
 
 	"Gravite": [{
 		"text": "Soin interne"
@@ -81,39 +43,64 @@
 		"text": "Chute"
 	}],
 
-	"Societe": [{
-		"text": "ASO NUTRITION"
-	}, {
-		"text": "SANDERS"
-	}, {
-		"text": "Mixscience"
-	}, {
-		"text": "4 Vallées"
-	}, {
-		"text": "ABERA"
-	}, {
-		"text": "RVE"
-	}, {
-		"text": "Volailles de Blancafort"
-	}, {
-		"text": "Farmor"
-	}, {
-		"text": "VDK"
-	}, {
-		"text": "Robichon"
-	}, {
-		"text": "OVOTEAM"
-	}, {
-		"text": "Avril PA"
-	}, {
-		"text": "Boscher Volailles"
-	}, {
-		"text": "Matine Brugnens"
-	}, {
-		"text": "Agro Evolution "
-	}, {
-		"text": "Amilly accouvage"
+	"Entreprise": [{
+		"Id": "1",
+		"nom": "AVRIL",
+		"composants": {
+			"Domaine": [{
+				"type": "GROUPE"
+			}, {
+				"type": "Test"
+			}],
+			"Site": [{
+				"nom": "Monceau Avril"
+			}, {
+				"nom": "La Défense Egée"
+			}],
+			"Atelier": [{
+				"nom": "Bureaux"
+			}, {
+				"nom": "Déplacement route"
+			}, {
+				"nom": "Autre"
+			}]
+		}
+	},{
+		"Id":"2",
+		"nom":"Saipol",
+		"composants": {
+			"Domaine": [{
+				"type": "Transfo Végétale"
+			}],
+			"Site": [{
+				"nom": "Services centraux"
+			}, {
+				"nom": "Bassens"
+			},{
+				"nom":"Dieppe"
+			}],
+
+			"Atelier": [{
+				"nom": "Bureaux"
+			}, {
+				"nom": "Déplacement route"
+			}, {
+				"nom": "Chantier / travaux"
+			},{
+				"nom":"Conditionnement"
+			},{
+				"nom":"Estérification"
+			},{
+				"nom":"Extraction"
+			},{
+				"nom":"Laboratoire"
+			},{
+				"nom":"Logistique"
+			},{
+				"nom":"Autres"
+			}]
+		}
+
 	}]
-	
 
 }

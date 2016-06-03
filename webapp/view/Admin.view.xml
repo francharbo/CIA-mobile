@@ -2,15 +2,15 @@
 	xmlns:com="sap.ui.commons" xmlns:core="sap.ui.core" xmlns:coml="sap.ui.commons.layout" xmlns="sap.m" xmlns:table="sap.ui.table"
 	xmlns:cust="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="fr.ar.cia.controller.Step">
 	<App backgroundColor="white">
-		<Page enableScrolling="true" showFooter="false" showHeader="false">
+		<Page enableScrolling="true" showFooter="false" showHeader="false" class="relativePosition">
 			<VBox width="100%">
-				<HBox id="header" class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
+				<HBox id="header" height="10%" class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
 					<items>
-						<Image src="resource/Image2.png" width="50%"/>
-						<Image src="resource/Image1.png" width="90%"/>
+						<Image id="phoneLogo" src="resource/Image2.png"/>
+						<Image id="textLogo" src="resource/Image1.png"/>
 					</items>
 				</HBox>
-				<FlexBox alignItems="Begin">
+				<FlexBox alignContent="Start">
 					<Button width="100%" text="Go To Menu" press="goToMenu">
 						<layoutData>
 							<FlexItemData growFactor="1"/>
@@ -22,41 +22,39 @@
 						</layoutData>
 					</Button>
 				</FlexBox>
-
-				<table:Table id="table" rows="{/injuries}" visibleRowCount="8">
-					<table:columns>
-						<table:Column>
-							<Label text="site"/>
-							<table:template>
-								<Link text="{Site}" press="updateInjury" cust:Id="{Id}"/>
-							</table:template>
-						</table:Column>
-						<table:Column>
-							<Label text="Victime"/>
-							<table:template>
-								<Text text="{victime}"/>
-							</table:template>
-						</table:Column>
-						<table:Column>
-							<Label text="Gravité"/>
-							<table:template>
-								<Text text="{gravite}"/>
-							</table:template>
-						</table:Column>
-						<table:Column>
-							<Label text="Date"/>
-							<table:template>
-								<Text text="{Date}"/>
-							</table:template>
-						</table:Column>
-					</table:columns>
-				</table:Table>
-				<HBox class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
-					<items>
-						<Image src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
-					</items>
-				</HBox>
+				<ScrollContainer height="80%" width="100%" vertical="true" focusable="true">
+					<Table id="table" items="{/injuries}">
+						<headerToolbar>
+							<Toolbar>
+								<SearchField placeholder="Recherche..."></SearchField>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column><Text text="Site"/></Column>
+							<Column><Text text="Victime"/></Column>
+							<Column><Text text="Gravité"/></Column>
+							<Column><Text text="Date"/></Column>
+						</columns>
+						<items>
+							<ColumnListItem press="updateInjury" type="Navigation" cust:Id="{Id}">
+								<cells>
+									<Text text="{Id}"/>
+									<Text text="{Site}"/>
+									<Text text="{victime}"/>
+									<Text text="{gravite}"/>
+									<Text text="{Date}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</ScrollContainer>
 			</VBox>
+			<HBox id="footer" class="footerStyle" height="10%" width="100%" alignItems="Center" justifyContent="End" displayInline="false"
+				fitContainer="false">
+				<items>
+					<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
+				</items>
+			</HBox>
 		</Page>
 	</App>
 </mvc:View>

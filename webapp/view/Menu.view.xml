@@ -23,11 +23,13 @@
 								</coml:MatrixLayoutCell>
 							</coml:MatrixLayoutRow>
 							<coml:MatrixLayoutRow>
+								<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
-								</coml:MatrixLayoutCell>
-								<coml:MatrixLayoutCell>
-									<Input id="societe"/>
-									<Input id="domain" visible="false"/>								
+									<com:ComboBox id="societe" items="{/Entreprise}" width="75%" change="onChangeSociety">
+										<core:ListItem key="{Id}" text="{nom}"/>
+									</com:ComboBox>
+									<com:ComboBox id="domain" visible="false" width="75%">
+									</com:ComboBox>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
 									<Text text="Société"/>
@@ -38,7 +40,8 @@
 									<Image src="resource/world.jpg"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
-									<Input id="site" value="{injuries>Site}"/>
+									<com:ComboBox id="site" value="{injuries>Site}" width="75%">
+									</com:ComboBox>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
 									<Text text="Site"/>
@@ -49,8 +52,8 @@
 									<Image src="resource/Usine.jpg"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
-									<com:ComboBox items="{/Atelier}" id="atelier" value="{injuries>atelier}">
-										<core:ListItem text="{text}"/>
+									<com:ComboBox id="atelier" value="{injuries>atelier}" width="75%">
+									
 									</com:ComboBox>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
@@ -67,7 +70,8 @@
 						<Button icon="sap-icon://forward" text="DIFFUSION DE LA CIA" press="onStep3"/>
 					</items>
 				</VBox>
-				<HBox id="footer" class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+				<HBox id="footer" class="footerStyle" width="100%" height="10%" alignItems="Center" justifyContent="End" displayInline="false"
+					fitContainer="false">
 					<items>
 						<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
 					</items>

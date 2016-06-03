@@ -16,7 +16,7 @@
 							<Image id="textLogo" src="resource/Image1.png"/>
 						</items>
 					</HBox>
-					<HBox id="footer" class="footerStyle" height="10%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+					<HBox id="footer" class="footerStyle" height="10%" width="100%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 						<items>
 							<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
 						</items>

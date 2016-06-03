@@ -1,35 +1,37 @@
 /* Enter your custom styles here */
- .myBackgroundStyle{  
-  background: url("/webapp/resource/full_background.jpg");
-  max-width: 100%;
- }
- 
- .headerStyle {
- 	background-color: #F7D358;
- }
- 
- .footerStyle {
- 	background-color: #8A2908;
- }
- 
- .footerLogo {
- 	background-image: url("/webapp/resource/Avril_logo_pointjaune_RVB.png");
- 	background-repeat: no-repeat;
-	background-size: 10%;
- }
- .backgroundstick {
- 	width:320px;
-    height:302px;
- 	background-image: url(/webapp/resource/stickman.png);
- 	background-repeat:no-repeat;
-	background-position: center; 
-	position:relative;
- }
- .mail{
- 	margin-left: auto ;
-	margin-right: auto ;
- }
- 
- .blueIcon {
- 	background-color: blue;
- }
+
+.myBackgroundStyle {
+    background: url("/webapp/resource/full_background.jpg");
+    max-width: 100%;
+}
+.headerStyle {
+    background-color: #F7D358;
+}
+.footerStyle {
+    background-color: #8A2908;
+    position:absolute;
+    bottom: 0;
+}
+.footerLogo {
+    background-image: url("/webapp/resource/Avril_logo_pointjaune_RVB.png");
+    background-repeat: no-repeat;
+    background-size: 10%;
+}
+.backgroundstick {
+    width: 320px;
+    height: 302px;
+    background-image: url(/webapp/resource/stickman.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.mail {
+    margin-left: auto;
+    margin-right: auto;
+}
+.blueIcon {
+    background-color: blue;
+}
+.relativePosition {
+    position: relative;
+}

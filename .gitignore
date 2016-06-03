@@ -9,3 +9,4 @@ extended_runnable_file.html
 .*/extended_runnable_file.html
 /.user.project.json
 /dist/
+/webapp/preview_hidden.html

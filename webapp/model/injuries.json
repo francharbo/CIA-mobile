@@ -1,79 +1,87 @@
 {
 	"injuries": [{
-		"Id":"01",
-		"Auteur":"foo",
+		"Id": "1",
+		"Auteur": "foo",
 		"Site": "Paris",
 		"atelier": "Evry",
 		"victime": "bla",
 		"phase": "Test",
 		"description": "main découpé par scie",
-		"destinataire":"",
+		"destinataire": "",
 		"Date": "31/05/2016",
-		"gravite":"forte",
-		"PartiesBlessees":[{
-			"Tete":false,
-			"Epaule":false,
-			"Torse":false,
-			"Main":true,
-			"Jambes":false,
-			"pied":false
-		}]
+		"gravite": "soin interne",
+		"Cause": "Circulation",
+		"natureDommage": "Douleur",
+		"PartiesBlessees": {
+			"Tete": true,
+			"Epaule": false,
+			"Torse": false,
+			"Main": true,
+			"Jambes": false,
+			"Pied": false
+		}
 	}, {
-		"Id":"02",
-		"Auteur":"foo",
+		"Id": "2",
+		"Auteur": "foo",
 		"Site": "Lyon",
 		"atelier": "Villeurbanne",
 		"victime": "Zac",
 		"phase": "Test",
 		"description": "pied découpé par scie",
-		"destinataire":"",
+		"destinataire": "",
 		"Date": "31/05/2016",
-		"gravite":"forte",
-		"PartiesBlessees":[{
-			"Tete":false,
-			"Epaule":false,
-			"Torse":false,
-			"Main":false,
-			"Jambes":false,
-			"pied":true
-		}]
+		"gravite": "soin interne",
+		"Cause": "Circulation",
+		"natureDommage": "Douleur",
+		"PartiesBlessees": {
+			"Tete": false,
+			"Epaule": false,
+			"Torse": false,
+			"Main": false,
+			"Jambes": false,
+			"Pied": true
+		}
 	}, {
-		"Id":"03",
-		"Auteur":"foo",
+		"Id": "3",
+		"Auteur": "foo",
 		"Site": "Paris",
 		"atelier": "Esbly",
 		"victime": "bla",
 		"phase": "Test",
 		"description": "main découpé par scie",
-		"destinataire":"",
+		"destinataire": "",
 		"Date": "31/05/2016",
-		"gravite":"forte",
-		"PartiesBlessees":{
-			"Tete":false,
-			"Epaule":false,
-			"Torse":false,
-			"Main":true,
-			"Jambes":false,
-			"pied":false
+		"gravite": "soin interne",
+		"Cause": "Circulation",
+		"natureDommage": "Douleur",
+		"PartiesBlessees": {
+			"Tete": false,
+			"Epaule": false,
+			"Torse": false,
+			"Main": true,
+			"Jambes": false,
+			"pied": false
 		}
 	}, {
-		"Id":"04",
-		"Auteur":"foo",
+		"Id": "4",
+		"Auteur": "foo",
 		"Site": "Paris",
 		"atelier": "Chamigny",
 		"victime": "bla",
 		"phase": "Test",
 		"description": "pied tordu",
-		"destinataire":"",
+		"destinataire": "",
 		"Date": "31/05/2016",
-		"gravite":"faible",
-		"PartiesBlessees":[{
-			"Tete":false,
-			"Epaule":false,
-			"Torse":false,
-			"Main":false,
-			"Jambes":false,
-			"pied":true
-		}]
+		"gravite": "soin interne",
+		"Cause": "Circulation",
+		"natureDommage": "Douleur",
+		"PartiesBlessees": {
+			"Tete": false,
+			"Epaule": false,
+			"Torse": false,
+			"Main": false,
+			"Jambes": false,
+			"Pied": true
+		}
 	}]
 }

@@ -7,7 +7,8 @@ sap.ui.define([
 
 		onInit: function() {
 			that = this;
-
+			
+			this.getView().setModel(this.getOwnerComponent().getModel("ComboBox"));
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("menu").attachPatternMatched(this._onObjectMatched, this);
 			this.getRouter().initialize();
@@ -98,6 +99,20 @@ sap.ui.define([
 			}else {
 				sap.ui.commons.MessageBox.alert("Veuillez commencer par l'étape 1");
 			}
+		},
+		onChangeSociety:function(){
+			var Id = this.getView().byId("societe").getSelectedKey() - 1;
+			this.getView().byId("domain").setVisible(true);
+			
+			var oItemTemplate = new sap.ui.core.ListItem({text:"{type}"});
+			this.getView().byId("domain").bindItems("/Entreprise/" + Id + "/composants/Domaine",oItemTemplate);
+			
+			oItemTemplate = new sap.ui.core.ListItem({text:"{nom}"});
+			this.getView().byId("site").bindItems("/Entreprise/" + Id + "/composants/Site",oItemTemplate);
+			
+			oItemTemplate = new sap.ui.core.ListItem({text:"{nom}"});
+			this.getView().byId("atelier").bindItems("/Entreprise/" + Id + "/composants/Atelier",oItemTemplate);
+			
 		}
 	});
 

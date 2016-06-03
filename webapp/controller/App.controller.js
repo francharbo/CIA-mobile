@@ -21,7 +21,11 @@ sap.ui.define([
 				oViewModel.setProperty("/busy", false);
 				oViewModel.setProperty("/delay", iOriginalBusyDelay);
 			};
+			document.addEventListener("deviceready", onDeviceReady, false);
 
+			function onDeviceReady() {
+				console.log(navigator.camera);
+			}
 			// this.getOwnerComponent().getModel().metadataLoaded().
 			//  	then(fnSetAppNotBusy);
 			fnSetAppNotBusy();

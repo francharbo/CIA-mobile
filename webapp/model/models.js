@@ -19,6 +19,10 @@ sap.ui.define([
 		createinjuriesModel: function() {
 			var path = jQuery.sap.getModulePath("fr.ar.cia");
 			return new JSONModel([path, "model/injuries.json"].join("/"));
+		},
+		createComboBoxModel: function() {
+			var path = jQuery.sap.getModulePath("fr.ar.cia");
+			return new JSONModel([path, "model/ComboBox.json"].join("/"));
 		}
 
 	};

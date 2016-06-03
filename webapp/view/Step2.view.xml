@@ -3,12 +3,12 @@
 	xmlns:cust="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="fr.ar.cia.controller.Step">
 	<App backgroundColor="white">
 		<Page enableScrolling="true" showFooter="false" showHeader="false">
-			<VBox width="100%">
+			<VBox width="100%" >
 				<items>
-					<HBox id="header" class="headerStyle" alignItems="Center" justifyContent="SpaceBetween">
+					<HBox id="header" class="headerStyle" height="10%" alignItems="Center" justifyContent="SpaceBetween">
 						<items>
-							<Image id="phoneLogo" src="resource/Image2.png" width="50%"/>
-							<Image id="textLogo" src="resource/Image1.png" width="90%"/>
+							<Image id="phoneLogo" src="resource/Image2.png"/>
+							<Image id="textLogo" src="resource/Image1.png"/>
 						</items>
 					</HBox>
 					<HBox alignItems="End" justifyContent="SpaceBetween">
@@ -31,45 +31,62 @@
 							</Button>
 						</items>
 					</HBox>
-					<coml:MatrixLayout height="200px">
-						<coml:MatrixLayoutRow id="rowHead" height="22%">
+					<coml:MatrixLayout>
+						<coml:MatrixLayoutRow id="rowHead" height="17%">
 							<coml:MatrixLayoutCell >
-								<com:ComboBox value="FACE" width="75%"></com:ComboBox>
+								<com:ComboBox value="FACE" width="75%">
+									<core:ListItem text="DOS"/>
+									<core:ListItem text="FACE"/>
+								</com:ComboBox>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell hAlign="Center">
 								<Image id="Tete" src="resource/Tete.png" press="InjurySelect" cust:desc="Tete" cust:status="{injuries>PartiesBlessees/Tete}"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
 						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow id="rowMiddle" height="22%">
+						<coml:MatrixLayoutRow id="rowMiddle" height="17%">
 							<coml:MatrixLayoutCell hAlign="End">
-								<Image id="Bras" src="resource/Bras.png" press="InjurySelect" cust:desc="Bras" cust:status="{injuries>PartiesBlessees/Bras}"/>
+								<Image id="Bras"  press="InjurySelect" cust:desc="Bras" cust:status="{injuries>PartiesBlessees/Bras}"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell hAlign="Center">
-								<Image id="Torse" src="resource/Torse.png" press="InjurySelect" cust:desc="Torse" cust:status="{injuries>PartiesBlessees/Torse}"/>
+								<Image id="Torse"  press="InjurySelect" cust:desc="Torse" cust:status="{injuries>PartiesBlessees/Torse}"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell halign="Begin">
-								<Image id="Main" src="resource/Main.png" press="InjurySelect" cust:desc="Main" cust:status="{injuries>PartiesBlessees/Main}"/>
+								<Image id="Main" press="InjurySelect" cust:desc="Main" cust:status="{injuries>PartiesBlessees/Main}"/>
 							</coml:MatrixLayoutCell>
 						</coml:MatrixLayoutRow>
-						<coml:MatrixLayoutRow id="rowBottom" height="22%">
+						<coml:MatrixLayoutRow id="rowBottom" height="17%">
 							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell hAlign="Center" vAlign="Middle">
 								<FlexBox alignItems="Center" justifyContent="Center">
-									<Image id="Jambe" src="resource/Jambe.png" press="InjurySelect" cust:desc="Jambe" cust:status="{injuries>PartiesBlessees/Jambe}"/>
-									<Image id="Pied" src="resource/Pied.png" press="InjurySelect" cust:desc="Pied" cust:status="{injuries>PartiesBlessees/Pied}"/>
+									<Image id="Jambe"  press="InjurySelect" cust:desc="Jambe" cust:status="{injuries>PartiesBlessees/Jambe}">
+										<layoutData>
+											<FlexItemData growFactor="3"/>
+										</layoutData>
+									</Image>
+									<Image id="Pied" press="InjurySelect" cust:desc="Pied" cust:status="{injuries>PartiesBlessees/Pied}">
+										<layoutData>
+											<FlexItemData growFactor="1"/>
+										</layoutData>
+									</Image>
 								</FlexBox>
 							</coml:MatrixLayoutCell>
 						</coml:MatrixLayoutRow>
 					</coml:MatrixLayout >
 					<VBox justifyContent="Center" alignItems="Center">
-						<com:DropdownBox id="gravite" placeholder="Gravité"></com:DropdownBox>
-						<com:DropdownBox id="nature" placeholder="Nature du dommage"></com:DropdownBox>
-						<com:DropdownBox id="cause" placeholder="Cause"></com:DropdownBox>
+						<com:DropdownBox items="{/Gravite}" id="gravite" placeholder="Gravité" value="{injuries>gravite}"> 
+							<core:ListItem text="{text}"/>
+						</com:DropdownBox>
+						<com:DropdownBox id="nature" items="{/NatureDommage}" placeholder="Nature du dommage" value="{injuries>natureDommage}">
+							<core:ListItem text="{text}"/>
+						</com:DropdownBox>
+						<com:DropdownBox id="cause" items="{/Cause}" placeholder="Cause" value="{injuries>Cause}">
+							<core:ListItem text="{text}"/>
+						</com:DropdownBox>
 					</VBox>
-					<HBox id="footer" class="footerStyle" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
+					<HBox id="footer" class="footerStyle" height="10%" width="100%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
 						<items>
-							<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png" height="3em"/>
+							<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
 						</items>
 					</HBox>
 				</items>

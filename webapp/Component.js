@@ -27,6 +27,7 @@ sap.ui.define([
 			this.setModel(models.createDeviceModel(), "device");
 			this.setModel(models.createLoginModel(),"login");
 			this.setModel(models.createinjuriesModel(),"injuries");
+			this.setModel(models.createComboBoxModel(),"ComboBox");
 			
 			this.getRouter().initialize();
 		},

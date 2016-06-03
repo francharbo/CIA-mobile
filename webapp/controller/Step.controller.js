@@ -5,7 +5,6 @@ sap.ui.define([
 	var that;
 	return BaseController.extend("fr.ar.cia.controller.Step", {
 
-
 		onInit: function() {
 			that = this;
 			this.getView().setModel(this.getOwnerComponent().getModel("injuries"));
@@ -15,36 +14,60 @@ sap.ui.define([
 			oRouter.getRoute("step2").attachPatternMatched(this._onObjectMatched, this);
 			oRouter.getRoute("step3").attachPatternMatched(this._onObjectMatched, this);
 		},
-		
+
 		onAfterRendering: function() {
 			var header = this.byId("header");
 			var headerLength = header.getHeight().length;
 			var textLogo = this.byId("textLogo");
-			textLogo.setHeight($(window).height()*header.getHeight().substring(0, headerLength-1)/100+ "px");
+			textLogo.setHeight($(window).height() * header.getHeight().substring(0, headerLength - 1) / 100 + "px");
 			var phoneLogo = this.byId("phoneLogo");
-			phoneLogo.setHeight($(window).height()*header.getHeight().substring(0, headerLength-1)/100+ "px");
-			
+			phoneLogo.setHeight($(window).height() * header.getHeight().substring(0, headerLength - 1) / 100 + "px");
+
 			var footer = this.byId("footer");
 			var footerLength = footer.getHeight().length;
 			var avrilLogo = this.byId("avrilLogo");
-			avrilLogo.setHeight($(window).height()*footer.getHeight().substring(0, footerLength-1)/100+ "px");
-			
+			avrilLogo.setHeight($(window).height() * footer.getHeight().substring(0, footerLength - 1) / 100 + "px");
+
 			if (this.getView().getViewName().indexOf("Step2") > -1) {
-				
-				var middleHeight = this.getView().byId("rowMiddle").$().height() + "px";
-				var bottomHeight = this.getView().byId("rowBottom").$().height() + "px";
-				this.getView().byId("Tete").setHeight(this.getView().byId("rowHead").$().height() + "px");
+				var head = this.getView().byId("rowHead");
+				var middle = this.getView().byId("rowMiddle");
+				var bottom = this.getView().byId("rowBottom");
+
+				var headHeight = $(window).height() * head.getHeight().substring(0, head.getHeight().length - 1) / 100 + "px";
+				var middleHeight = $(window).height() * middle.getHeight().substring(0, middle.getHeight().length - 1) / 100 + "px";
+				var bottomHeight = $(window).height() * bottom.getHeight().substring(0, bottom.getHeight().length - 1) / 100 + "px";
+
+				this.getView().byId("Tete").setHeight(headHeight);
+				this.renderHurtStickMan("Tete");
+
 				this.getView().byId("Bras").setHeight(middleHeight);
+				this.renderHurtStickMan("Bras");
+
 				this.getView().byId("Torse").setHeight(middleHeight);
+				this.renderHurtStickMan("Torse");
+
 				this.getView().byId("Main").setHeight(middleHeight);
+				this.renderHurtStickMan("Main");
+
 				this.getView().byId("Jambe").setHeight(bottomHeight);
+				this.renderHurtStickMan("Jambe");
+
 				this.getView().byId("Pied").setHeight(bottomHeight);
+				this.renderHurtStickMan("Pied");
 			}
 		},
-		
+		renderHurtStickMan: function(bodypart) {
+			if (this.getView().byId(bodypart).data("status")) {
+				this.getView().byId(bodypart).setSrc("resource/" + bodypart + "Select.png");
+			} else {
+				this.getView().byId(bodypart).setSrc("resource/" + bodypart + ".png");
+			}
+		},
+
 		_onObjectMatched: function(oEvent) {
 			that.usr = oEvent.getParameter("arguments").usrNumber;
 			that.visite = oEvent.getParameter("arguments").Id;
+			this.getView().setModel(this.getOwnerComponent().getModel("ComboBox"));
 			this.getView().bindElement({
 				path: "/injuries/" + that.visite,
 				model: "injuries"
@@ -53,7 +76,7 @@ sap.ui.define([
 		_onObjectMatchedAdmin: function(oEvent) {
 			that.usrNumber = oEvent.getParameter("arguments").usrNumber;
 		},
-		
+
 		/**
 		 * Navigates back in the browser history, if the entry was created by this app.
 		 * If not, it navigates to the Fiori Launchpad home page.
@@ -131,7 +154,7 @@ sap.ui.define([
 			});
 			dialog.open();
 		},
-		
+
 		onPerson: function() {
 			var dialog = new sap.m.Dialog({
 				title: "Sélectionner la victime",
@@ -172,7 +195,7 @@ sap.ui.define([
 			});
 			dialog.open();
 		},
-		
+
 		goToMenu: function() {
 			this.getRouter().navTo("menu", {
 				usrNumber: that.usrNumber
@@ -262,8 +285,22 @@ sap.ui.define([
 			}
 			this.getView().byId(part).setSrc("resource/" + part + select);
 
-		}
+		},
+		picture: function() {
+			navigator.camera.getPicture(onSuccess, onFail, {
+				quality: 50,
+				destinationType: Camera.DestinationType.FILE_URI
+			});
 
+			function onSuccess(imageURI) {
+				var image = document.getElementById('myImage');
+				image.src = imageURI;
+			}
+
+			function onFail(message) {
+				alert('Failed because: ' + message);
+			}
+		}
 	});
 
 });
