@@ -22,7 +22,7 @@
 									<FlexItemData growFactor="100"/>
 								</layoutData>
 							</Button>
-							<Button icon="sap-icon://document-text">
+							<Button icon="sap-icon://document-text" press="onOtherButton">
 								<layoutData>
 									<FlexItemData growFactor="1"/>
 								</layoutData>
@@ -31,7 +31,7 @@
 					</HBox>
 					<VBox >
 						<f:SimpleForm>
-							<VBox>
+							<VBox height="70%">
 								<HBox width="100%" id="__hbox1" displayInline="true" fitContainer="false" justifyContent="End">
 									<items>
 										<Text text="SMS"/>
@@ -79,18 +79,19 @@
 								</HBox>
 							</VBox>
 						</f:SimpleForm>
-						<HBox justifyContent="Center">
+						<HBox justifyContent="Center" height="10%">
 							<Button text="Autre(s)" icon="sap-icon://arobase" type="Emphasized" class="sapUiSmallMarginEnd" press="onOtherButton"/>
 							<Button text="Envoyer" icon="sap-icon://email" type="Reject" class="sapUiSmallMarginBegin" press="sendSMS"/>
 						</HBox>
 					</VBox>
-					<HBox id="footer" class="footerStyle" height="10%" width="100%" alignItems="Center" justifyContent="End" displayInline="false" fitContainer="false">
-						<items>
-							<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
-						</items>
-					</HBox>
 				</items>
 			</VBox>
+			<HBox id="footer" class="footerStyle" height="10%" width="100%" alignItems="Center" justifyContent="End" displayInline="false"
+				fitContainer="false">
+				<items>
+					<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>
+				</items>
+			</HBox>
 		</Page>
 	</App>
 </mvc:View>

@@ -9,7 +9,7 @@
 }
 .footerStyle {
     background-color: #8A2908;
-    position:absolute;
+    position:fixed;
     bottom: 0;
 }
 .footerLogo {
@@ -31,7 +31,4 @@
 }
 .blueIcon {
     background-color: blue;
-}
-.relativePosition {
-    position: relative;
 }

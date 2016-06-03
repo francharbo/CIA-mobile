@@ -8,7 +8,7 @@
     "targetFolder": "dist",
     "sourceFolder": "webapp",
     "buildRequired": false,
-    "lastBuildDateTime": "Fri, 03 Jun 2016 15:21:47 GMT"
+    "lastBuildDateTime": "Fri, 03 Jun 2016 15:49:51 GMT"
   },
   "generation": [
     {
@@ -50,7 +50,7 @@
   },
   "hcpdeploy": {
     "account": "a33c3886c",
-    "name": "cia",
-    "lastVersionWeTriedToDeploy": "1.0.4"
+    "name": "ciamobile",
+    "lastVersionWeTriedToDeploy": "1.0.0"
   }
 }
