@@ -257,14 +257,15 @@ sap.ui.define([
 			// Set Report title in first row or line
 			CSV += ReportTitle + '\r\n\n';
 
-			CSV += "Site, Victime, Gravité, Date" + "\r\n";
+			CSV += "Site, Victime, Gravité, Date, Domaine, Société, Nature Dommage, Cause" + "\r\n";
 
 			//loop is to extract each row
 
 			for (var i = 0; i < arrData.length; i++) {
 
 				var row = "";
-				row += arrData[i].Site + ',' + arrData[i].victime + ',' + arrData[i].gravite + ',' + arrData[i].Date + ',';
+				row += arrData[i].Site + ',' + arrData[i].victime + ',' + arrData[i].gravite + ',' + arrData[i].Date + ',' + arrData[i].Domaine + ',' + arrData[i].Societe + 
+				',' + arrData[i].natureDommage + ',' + arrData[i].Cause;
 				row.slice(0, row.length - 1);
 				CSV += row + '\r\n';
 
