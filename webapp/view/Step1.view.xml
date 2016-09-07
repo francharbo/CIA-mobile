@@ -41,10 +41,7 @@
 									<DatePicker id="date" placeholder="Aujourd'hui" value="{injuries>Date}"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
-									<VBox >
-										<Text text="Date"/>
-										<Text text="Heure"/>
-									</VBox>
+									<Text text="Date"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
 							</coml:MatrixLayoutRow>
@@ -84,6 +81,7 @@
 											<core:ListItem text="CDI" key="item1" id="__item6"/>
 											<core:ListItem text="CDD" key="item2" id="__item7"/>
 											<core:ListItem text="Stagiaire" key="item3" id="__item8"/>
+											<core:ListItem text="Intérimaire" key="item3" id="__item9"/>
 										</com:items>
 									</com:ComboBox>
 								</coml:MatrixLayoutCell>

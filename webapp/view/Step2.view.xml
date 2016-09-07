@@ -40,7 +40,7 @@
 								</com:ComboBox>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell hAlign="Center">
-								<Image id="Tete" src="resource/Tete.png" press="InjurySelect" cust:desc="Tete" cust:status="{injuries>PartiesBlessees/Tete}"/>
+								<Image id="Tete" src="resource/Tete.png" press="InjurySelect" cust:desc="Tete"/>
 							</coml:MatrixLayoutCell>
 							<coml:MatrixLayoutCell></coml:MatrixLayoutCell>
 						</coml:MatrixLayoutRow>

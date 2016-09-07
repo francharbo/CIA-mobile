@@ -8,8 +8,8 @@
   "build": {
     "targetFolder": "dist",
     "sourceFolder": "webapp",
-    "buildRequired": true,
-    "lastBuildDateTime": "Fri, 03 Jun 2016 15:49:51 GMT"
+    "buildRequired": false,
+    "lastBuildDateTime": "Mon, 11 Jul 2016 14:13:37 GMT"
   },
   "generation": [
     {
@@ -51,7 +51,21 @@
   },
   "hcpdeploy": {
     "account": "a33c3886c",
-    "name": "ciamobile",
-    "lastVersionWeTriedToDeploy": "1.0.0"
+    "name": "ciamob",
+    "lastVersionWeTriedToDeploy": "1.0.1"
+  },
+  "hybrid.facadeconfig": {
+    "bMockLocation": true,
+    "position": {
+      "latitude": 1.2748848,
+      "longitude": 103.7973789
+    },
+    "locations": [],
+    "accelerometer": {
+      "x": "0",
+      "y": "0",
+      "z": "0"
+    },
+    "compass": {}
   }
 }

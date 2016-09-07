@@ -6,7 +6,6 @@ sap.ui.define([
 	return BaseController.extend("fr.ar.cia.controller.Step", {
 
 		onInit: function() {
-			that = this;
 
 			this.getView().setModel(this.getOwnerComponent().getModel("injuries"));
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -17,6 +16,7 @@ sap.ui.define([
 		},
 
 		onAfterRendering: function() {
+			that = this;
 			var header = this.byId("header");
 			var headerLength = header.getHeight().length;
 			var textLogo = this.byId("textLogo");
@@ -78,40 +78,69 @@ sap.ui.define([
 		},
 		renderHurtStickMan: function(bodypart) {
 			var part;
-			if (bodypart.indexOf("Jambe") === -1) {
-				if (bodypart.indexOf("Gauche") > -1) {
-					part = bodypart.replace("Gauche", "");
-				} else if (bodypart.indexOf("Droit") > -1) {
-					if (bodypart.indexOf("Droite") > -1) {
-						part = bodypart.replace("Droite", "");
+			if (bodypart !== "Tete") {
+				if (bodypart.indexOf("Jambe") === -1) {
+					if (bodypart.indexOf("Gauche") > -1) {
+						part = bodypart.replace("Gauche", "");
+					} else if (bodypart.indexOf("Droit") > -1) {
+						if (bodypart.indexOf("Droite") > -1) {
+							part = bodypart.replace("Droite", "");
+						} else {
+							part = bodypart.replace("Droit", "");
+						}
 					} else {
-						part = bodypart.replace("Droit", "");
+						part = bodypart;
 					}
 				} else {
 					part = bodypart;
 				}
+				if (this.getView().byId(bodypart).data("status")) {
+					this.getView().byId(bodypart).setSrc("resource/" + part + "Select.png");
+				} else {
+					this.getView().byId(bodypart).setSrc("resource/" + part + ".png");
+				}
 			} else {
-				part = bodypart;
-			}
-			if (this.getView().byId(bodypart).data("status")) {
-				this.getView().byId(bodypart).setSrc("resource/" + part + "Select.png");
-			} else {
-				this.getView().byId(bodypart).setSrc("resource/" + part + ".png");
+				var injurymodel = this.getOwnerComponent().getModel("injuries").getProperty("/injuries/" + this.visite);
+				var tete = injurymodel.PartiesBlessees.Tete;
+				var oeildroit = injurymodel.PartiesBlessees.OeilDroit;
+				var oeilgauche = injurymodel.PartiesBlessees.OeilGauche;
+
+				if (tete && oeildroit && oeilgauche) {
+					that.getView().byId("Tete").setSrc("resource/TeteBothEyeSelect.png");
+				} else if (tete && oeildroit) {
+					that.getView().byId("Tete").setSrc("resource/TeteEyeRightSelect.png");
+				} else if (tete && oeilgauche) {
+					that.getView().byId("Tete").setSrc("resource/TeteEyeLeftSelect.png");
+				} else if (tete) {
+					that.getView().byId("Tete").setSrc("resource/TeteSelect.png");
+				} else if (oeildroit && oeilgauche) {
+					that.getView().byId("Tete").setSrc("resource/TeteSelectBothEye.png");
+				} else if (oeildroit) {
+					that.getView().byId("Tete").setSrc("resource/TeteSelectEyeRight.png");
+				} else if (oeilgauche) {
+					that.getView().byId("Tete").setSrc("resource/TeteSelectEyeLeft.png");
+				} else {
+					that.getView().byId("Tete").setSrc("resource/Tete.png");
+				}
 			}
 
 		},
 
 		_onObjectMatched: function(oEvent) {
-			that.usr = oEvent.getParameter("arguments").usrNumber;
-			that.visite = oEvent.getParameter("arguments").Id;
+
+			this.usr = oEvent.getParameter("arguments").usrNumber;
+			this.visite = oEvent.getParameter("arguments").Id;
 			this.getView().setModel(this.getOwnerComponent().getModel("ComboBox"));
 			this.getView().bindElement({
 				path: "/injuries/" + that.visite,
 				model: "injuries"
 			});
+			that = this;
 		},
 		_onObjectMatchedAdmin: function(oEvent) {
-			that.usrNumber = oEvent.getParameter("arguments").usrNumber;
+
+			this.usrNumber = oEvent.getParameter("arguments").usrNumber;
+			that = this;
 		},
 
 		/**
@@ -153,14 +182,59 @@ sap.ui.define([
 		},
 
 		onOtherButton: function() {
+			var comex = this.getView().byId("comex").getSelected();
+			var hse = this.getView().byId("hse").getSelected();
+			var intranet = this.getView().byId("intranet").getSelected();
+			var encadrement = this.getView().byId("encadrement").getSelected();
+
+			var model = this.getOwnerComponent().getModel("Contact");
+			var data='{ "data" :[';
+			if (comex) {
+				for (var i in model.getProperty("/comex")) {
+					data += JSON.stringify(model.getProperty("/comex/" + i));
+					data += ",";
+				}
+			}
+			if (hse) {
+				for (var j in model.getProperty("/hse")) {
+					data += JSON.stringify(model.getProperty("/hse/" + j));
+					data += ",";
+				}
+			}
+			if (intranet) {
+				for (var k in model.getProperty("/intranet")) {
+					data += JSON.stringify(model.getProperty("/intranet/" + k));
+					data += ",";
+				}
+			}
+			if (encadrement) {
+				for (var l in model.getProperty("/encadrement")) {
+					data += JSON.stringify(model.getProperty("/encadrement/" + l));
+					data += ",";
+				}
+			}
+			
+			if(data.substring(data.length - 1) === ","){
+				data = data.substring(0,data.length - 1);
+			}
+			data += "]}";
+			var oModel = new sap.ui.model.json.JSONModel();
+			oModel.setData(JSON.parse(data));
+			sap.ui.getCore().setModel(oModel);
+			var list = new sap.ui.core.ListItem({text:"{mail}"});
+			var oComboBox = new sap.m.MultiComboBox({id: "newEmail",width: "100%",
+			items:{
+				path:"/data",
+				template:list
+			}
+			});
+			//oComboBox.bindAggregation("items",JSON.parse(data),list);
 			var dialog = new sap.m.Dialog({
 				title: "Envoi vers un nouveau destinataire",
 				type: "Message",
 				content: [
-					new sap.m.ComboBox({
-						id: "newEmail",
-						width: "100%"
-					})
+					oComboBox
+					
 				],
 				beginButton: new sap.m.Button({
 					text: "Valider",
@@ -264,8 +338,9 @@ sap.ui.define([
 			for (var i = 0; i < arrData.length; i++) {
 
 				var row = "";
-				row += arrData[i].Site + ',' + arrData[i].victime + ',' + arrData[i].gravite + ',' + arrData[i].Date + ',' + arrData[i].Domaine + ',' + arrData[i].Societe + 
-				',' + arrData[i].natureDommage + ',' + arrData[i].Cause;
+				row += arrData[i].Site + ',' + arrData[i].victime + ',' + arrData[i].gravite + ',' + arrData[i].Date + ',' + arrData[i].Domaine +
+					',' + arrData[i].Societe +
+					',' + arrData[i].natureDommage + ',' + arrData[i].Cause;
 				row.slice(0, row.length - 1);
 				CSV += row + '\r\n';
 
@@ -308,7 +383,14 @@ sap.ui.define([
 		Export: function() {
 
 			var data = this.getOwnerComponent().getModel("injuries").getData();
-			this.JSONToCSVConvertor(data, "Report");
+			var currentdate = new Date();
+			var datetime = currentdate.getDate() + "/" +
+				(currentdate.getMonth() + 1) + "/" +
+				currentdate.getFullYear() + "@" +
+				currentdate.getHours() + ":" +
+				currentdate.getMinutes() + ":" +
+				currentdate.getSeconds();
+			this.JSONToCSVConvertor(data, datetime);
 
 		},
 		InjurySelect: function(oEvent) {
@@ -317,11 +399,12 @@ sap.ui.define([
 			var status = oEvent.getSource().data("status");
 			var select = ".png";
 			if (part === "Tete") {
-				if (!that.popupHead) {
-					that.popupHead = sap.ui.xmlfragment("fr.ar.cia.view.fragment.dialogTete", that);
-					that.getView().addDependent(that.popupHead);
+				if (!this.popupHead) {
+					this.popupHead = sap.ui.xmlfragment("fr.ar.cia.view.fragment.dialogTete", that);
+					this.getView().addDependent(this.popupHead);
 				}
-				that.popupHead.open();
+				that = this;
+				this.popupHead.open();
 			}
 			if (status === false) {
 				select = "Select.png";
@@ -351,10 +434,10 @@ sap.ui.define([
 				var options = {
 					// Some common settings are 20, 50, and 100
 					quality: 50,
-					destinationType: Camera.DestinationType.FILE_URI,
-					// In this app, dynamically set the picture source, Camera or photo gallery
-					encodingType: Camera.EncodingType.JPEG,
-					mediaType: Camera.MediaType.PICTURE,
+					// destinationType: Camera.DestinationType.FILE_URI,
+					// // In this app, dynamically set the picture source, Camera or photo gallery
+					// encodingType: Camera.EncodingType.JPEG,
+					// mediaType: Camera.MediaType.PICTURE,
 					allowEdit: true,
 					correctOrientation: true //Corrects Android orientation quirks
 				}
@@ -374,31 +457,14 @@ sap.ui.define([
 				}
 			}
 		},
-		closeDialog:function(oEvent){
+		closeDialog: function(oEvent) {
 			oEvent.getSource().getParent().close();
+			that.renderHurtStickMan("Tete");
 		},
-		Validation:function(oEvent){
-			var tete = sap.ui.getCore().byId("teteCheck").getSelected();
-			var oeildroit = sap.ui.getCore().byId("oeildroitCheck").getSelected();
-			var oeilgauche = sap.ui.getCore().byId("oeilgaucheCheck").getSelected();
-			
-			if(tete && oeildroit && oeilgauche){
-				that.getView().byId("Tete").setSrc("resource/TeteBothEyeSelect.png");
-			}else if(tete && oeildroit){
-				that.getView().byId("Tete").setSrc("resource/TeteEyeRightSelect.png");
-			}else if(tete && oeilgauche){
-				that.getView().byId("Tete").setSrc("resource/TeteEyeLeftSelect.png");
-			}else if(tete){
-				that.getView().byId("Tete").setSrc("resource/TeteSelect.png");
-			}else if(oeildroit && oeilgauche){
-				that.getView().byId("Tete").setSrc("resource/TeteSelectBothEye.png");
-			}else if(oeildroit){
-				that.getView().byId("Tete").setSrc("resource/TeteSelectEyeRight.png");
-			}else if(oeilgauche){
-				that.getView().byId("Tete").setSrc("resource/TeteSelectEyeLeft.png");
-			}else{
-				that.getView().byId("Tete").setSrc("resource/Tete.png");
-			}
+		Validation: function(oEvent) {
+
+			that.renderHurtStickMan("Tete");
+
 			oEvent.getSource().getParent().close();
 		}
 	});

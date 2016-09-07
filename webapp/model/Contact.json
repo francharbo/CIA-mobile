@@ -1,0 +1,19 @@
+{
+	"comex": [{
+		"mail": "olivier@comex.fr"
+	}, {
+		"mail": "mickael@comex.fr"
+	}],
+
+	"hse": [{
+		"mail": "anne.cognard@groupeavril.com"
+	}, {
+		"mail": "laurent.laskri@groupeavril.com"
+	}],
+
+	"encadrement": [{
+		"mail": "dummy@encadrement.fr"
+	}, {
+		"mail": "lionel@encadrement.fr"
+	}]
+}

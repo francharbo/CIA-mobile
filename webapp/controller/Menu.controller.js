@@ -102,10 +102,9 @@ sap.ui.define([
 		},
 		onChangeSociety:function(){
 			var Id = this.getView().byId("societe").getSelectedKey() - 1;
-			this.getView().byId("domain").setVisible(true);
 			
 			var oItemTemplate = new sap.ui.core.ListItem({text:"{type}"});
-			this.getView().byId("domain").bindItems("/Entreprise/" + Id + "/composants/Domaine",oItemTemplate);
+			this.getView().byId("domain").bindText("/Entreprise/" + Id + "/composants/Domaine",oItemTemplate);
 			
 			oItemTemplate = new sap.ui.core.ListItem({text:"{nom}"});
 			this.getView().byId("site").bindItems("/Entreprise/" + Id + "/composants/Site",oItemTemplate);

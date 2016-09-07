@@ -28,8 +28,7 @@
 									<com:ComboBox id="societe" items="{/Entreprise}" width="75%" change="onChangeSociety">
 										<core:ListItem key="{Id}" text="{nom}"/>
 									</com:ComboBox>
-									<com:ComboBox id="domain" visible="false" width="75%">
-									</com:ComboBox>
+									<Text id="domain" visible="false"/>
 								</coml:MatrixLayoutCell>
 								<coml:MatrixLayoutCell>
 									<Text text="Société"/>
@@ -70,7 +69,7 @@
 						<Button icon="sap-icon://forward" text="DIFFUSION DE LA CIA" press="onStep3"/>
 					</items>
 				</VBox>
-				<HBox id="footer" class="footerStyle" width="100%" height="10%" alignItems="Center" justifyContent="End" displayInline="false"
+				<HBox id="footer" class="footerStyle"  width="100%" height="10%" alignItems="Center" justifyContent="End" displayInline="false"
 					fitContainer="false">
 					<items>
 						<Image id="avrilLogo" src="resource/Avril_logo_pointjaune_RVB.png"/>

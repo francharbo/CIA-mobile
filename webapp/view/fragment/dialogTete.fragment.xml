@@ -10,7 +10,7 @@
 						<Label text="Tête"/>
 					</coml:MatrixLayoutCell>
 					<coml:MatrixLayoutCell>
-						<CheckBox id="teteCheck"/>
+						<CheckBox id="teteCheck" selected="{injuries>PartiesBlessees/Tete}"/>
 					</coml:MatrixLayoutCell>
 				</coml:MatrixLayoutRow>
 				<coml:MatrixLayoutRow>
@@ -18,7 +18,7 @@
 						<Label text="Oeil Droit"/>
 					</coml:MatrixLayoutCell>
 					<coml:MatrixLayoutCell>
-						<CheckBox id="oeildroitCheck"/>
+						<CheckBox id="oeildroitCheck" selected="{injuries>PartiesBlessees/OeilDroit}"/>
 					</coml:MatrixLayoutCell>
 				</coml:MatrixLayoutRow>
 				<coml:MatrixLayoutRow>
@@ -26,7 +26,7 @@
 						<Label text="Oeil Gauche"/>
 					</coml:MatrixLayoutCell>
 					<coml:MatrixLayoutCell>
-						<CheckBox id="oeilgaucheCheck"/>
+						<CheckBox id="oeilgaucheCheck" selected="{injuries>PartiesBlessees/OeilGauche}"/>
 					</coml:MatrixLayoutCell>
 				</coml:MatrixLayoutRow>
 			</coml:MatrixLayout>

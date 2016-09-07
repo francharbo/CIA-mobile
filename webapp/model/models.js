@@ -23,6 +23,10 @@ sap.ui.define([
 		createComboBoxModel: function() {
 			var path = jQuery.sap.getModulePath("fr.ar.cia");
 			return new JSONModel([path, "model/ComboBox.json"].join("/"));
+		},
+		createContactModel:function(){
+			var path = jQuery.sap.getModulePath("fr.ar.cia");
+			return new JSONModel([path, "model/Contact.json"].join("/"));
 		}
 
 	};

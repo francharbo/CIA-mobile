@@ -47,11 +47,7 @@
 		"Id": "1",
 		"nom": "AVRIL",
 		"composants": {
-			"Domaine": [{
-				"type": "GROUPE"
-			}, {
-				"type": "Test"
-			}],
+			"Domaine": "Groupe",
 			"Site": [{
 				"nom": "Monceau Avril"
 			}, {
@@ -69,9 +65,7 @@
 		"Id":"2",
 		"nom":"Saipol",
 		"composants": {
-			"Domaine": [{
-				"type": "Transfo Végétale"
-			}],
+			"Domaine":"Transfo Végétale",
 			"Site": [{
 				"nom": "Services centraux"
 			}, {

@@ -38,7 +38,6 @@
 						<items>
 							<ColumnListItem press="updateInjury" type="Navigation" cust:Id="{Id}">
 								<cells>
-									<Text text="{Id}"/>
 									<Text text="{Site}"/>
 									<Text text="{victime}"/>
 									<Text text="{gravite}"/>

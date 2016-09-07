@@ -1,7 +1,6 @@
 {
 	"loginData": [
-		{"login": "foo", "password": "bar","position":"Test" ,"admin":true},
-		{"login": "bla", "password": "bla","admin":false},
-		{"login":"Zac", "password":"Zac","position":"Chef d'atelier","admin":false}
+		{"login":"Anne Cognard", "password":"Cognard","position":"HSE","admin":true},
+		{"login":"Valerie David","password":"David","position":"","admin":false}
 	]
 }

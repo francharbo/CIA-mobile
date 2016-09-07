@@ -11,6 +11,7 @@
     background-color: #8A2908;
     position:fixed;
     bottom: 0;
+    z-index: -1;
 }
 .footerLogo {
     background-image: url("/webapp/resource/Avril_logo_pointjaune_RVB.png");
